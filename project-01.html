@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRJ_01 · VOC 멀티에이전트 QA 파이프라인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="console-bar">
+  <div class="console-bar__inner">
+    <span class="leds"><i class="led led--r"></i><i class="led led--y"></i><i class="led led--g"></i></span>
+    <span class="console-bar__path">~/portfolio/prj_01 $ <b>cat README.md</b></span>
+    <nav class="console-nav">
+      <a href="index.html">Projects</a>
+      <a href="../index.html">← 메인 홈</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">Killer Module · PRJ_01</span>
+    <h1>VOC 멀티에이전트 QA 파이프라인</h1>
+    <p class="lede">AWS 기반 멀티에이전트가 처리한 VOC 결과물을, LLM Judge가 8개 품질지표로 자동 채점하고 대시보드로 리포팅하는 종단 QA 파이프라인입니다.</p>
+    <p class="role-line">// 팀 프로젝트(3팀) · 담당: 테스트 설계 · 최종 발표</p>
+  </section>
+
+  <section class="section">
+    <div class="metric-cards">
+      <div class="metric-card"><div class="v">100%</div><div class="k">JUDGE 자동 채점</div></div>
+      <div class="metric-card"><div class="v">8</div><div class="k">품질 평가 축</div></div>
+      <div class="metric-card"><div class="v">AWS</div><div class="k">실행 환경</div></div>
+      <div class="metric-card"><div class="v">4인</div><div class="k">팀 구성</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="panel">
+      <h2><span class="section__num">#</span> 개요</h2>
+      <p style="color:var(--ink-2)">고객의 소리(VOC)를 여러 전문 에이전트가 분업 처리하는 멀티에이전트 구조에서, 산출물의 품질을 사람이 일일이 검수하는 병목을 제거하는 것이 목표였습니다. LLM-as-a-Judge를 도입해 응답의 관련성·정확성·근거성 등을 자동 평가하고, 결과를 리포팅 대시보드로 집계했습니다.</p>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 담당 역할</h2>
+      <dl class="kv">
+        <dt>테스트 설계</dt><dd>평가 시나리오·기준(루브릭) 정의, Judge 프롬프트 검증</dd>
+        <dt>발표</dt><dd>최종 발표 PPT 스크립트(합니다체, 10분) 작성 및 시연(OBS 녹화)</dd>
+        <dt>협업</dt><dd>나병진(환경/PM)·김경숙(핵심개발)·정진웅(리포팅) 협업</dd>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 기술 스택</h2>
+      <div class="stack">
+        <span class="chip">AWS</span><span class="chip">Multi-Agent</span><span class="chip">LLM-as-a-Judge</span>
+        <span class="chip">Rubric</span><span class="chip">Dashboard</span><span class="chip">OBS Studio</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 성과</h2>
+      <ul style="color:var(--ink-2); padding-left:18px; margin:0">
+        <li>수작업 품질검수를 자동 채점으로 대체 — 평가 일관성·재현성 확보</li>
+        <li>8개 지표 기반 정량 스코어로 개선 우선순위 도출</li>
+        <li>리포팅 대시보드로 품질 추세를 이해관계자에게 가시화</li>
+      </ul>
+    </div>
+  </section>
+
+  <a class="backlink" href="index.html">전체 프로젝트로 돌아가기</a>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="contact">
+      <span>최성우 (최작가)</span>
+      <a href="mailto:mahokani@naver.com">mahokani@naver.com</a>
+      <a href="tel:01050331779">010-5033-1779</a>
+    </div>
+    <div class="sig">// PRJ_01</div>
+  </div>
+</footer>
+
+</body>
+</html>

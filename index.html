@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>최성우 · IT PM에서 AI 품질까지</title>
+<meta name="description" content="광고 AE에서 IT PM으로, 다시 AI QA로. 전환의 여정과 커리어.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!--
+============================================================================
+  경력 사이트 (메인 홈)  ·  choishijak-site/index.html
+============================================================================
+  구성: Hero → About → Career Timeline → AI QA 전환 → Skills → Contact
+  QA 포트폴리오(qa/index.html)와 디자인 통일. AI QA 섹션에서 qa/ 로 링크.
+
+  [Claude Code 채우기]
+  - {{GITHUB_USER}} / {{LINKEDIN_URL}} 링크
+  - assets/resume.pdf (이력서·경력기술서 PDF) 경로 확인
+  - 타임라인 연도·내용은 실제 이력 기준 최종 검토 (아래는 저장된 경력 기반 초안)
+============================================================================
+-->
+
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-2:#16233D; --navy-3:#22345A;
+    --orange:#E8710A; --orange-soft:#FFF1E4;
+    --bg:#F6F7F9; --card:#FFFFFF; --ink:#1C2430; --ink-2:#5A6474; --line:#E6E9EF;
+    --live:#2FA36B;
+    --mono:'JetBrains Mono','SFMono-Regular',ui-monospace,Consolas,monospace;
+    --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    --radius:14px; --maxw:1000px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---- Sticky Nav ---- */
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(27,42,74,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--navy-3)}
+  nav.top .wrap{display:flex;align-items:center;height:56px;gap:8px}
+  nav.top .brand{font-weight:800;color:#fff;font-size:15.5px;letter-spacing:-.01em}
+  nav.top .brand .k{font-family:var(--mono);color:var(--orange);font-size:13px;margin-left:6px}
+  nav.top .links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+  nav.top .links a{font-size:13.5px;color:#C5D0E4;padding:7px 12px;border-radius:8px;transition:color .15s,background .15s}
+  nav.top .links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+  nav.top .links a.cta{color:#fff;background:var(--orange)}
+  nav.top .links a.cta:hover{background:#cf6408}
+  @media (max-width:640px){nav.top .links a:not(.cta){display:none}}
+
+  /* ---- Console Hero ---- */
+  .console{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .console::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(820px 380px at 85% -20%,rgba(232,113,10,.20),transparent 60%)}
+  .hero{padding:70px 0 80px;position:relative}
+  .path{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:#9FB0CC;margin-bottom:22px}
+  .path b{color:var(--orange)}
+  .hero h1{font-size:clamp(29px,5.2vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1.14}
+  .hero h1 .accent{color:var(--orange)}
+  .hero .lede{margin-top:22px;max-width:600px;font-size:clamp(15px,2vw,17.5px);color:#C9D3E6}
+  .hero .lede b{color:#fff;font-weight:600}
+  .hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:14.5px;font-weight:600;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s}
+  .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .btn--primary{background:var(--orange);color:#fff}
+  .btn--primary:hover{transform:translateY(-2px)}
+  .btn--ghost{border-color:#3a4d78;color:#dfe7f4}
+  .btn--ghost:hover{border-color:#6d80a8;background:rgba(255,255,255,.04)}
+  .metrics{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px}
+  .metric{background:rgba(255,255,255,.05);border:1px solid var(--navy-3);border-radius:12px;padding:13px 20px;min-width:120px}
+  .metric .n{font-family:var(--mono);font-size:24px;font-weight:700;color:#fff;letter-spacing:-.02em}
+  .metric .l{font-size:12px;color:#9FB0CC;margin-top:2px}
+
+  /* ---- Section ---- */
+  section.block{padding:72px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+  .sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--orange);font-weight:600}
+  .sec-head h2{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:-.01em}
+
+  /* ---- About ---- */
+  .about p{font-size:16px;color:#2b3441;max-width:760px;margin-bottom:16px}
+  .about p b{color:var(--navy);font-weight:700}
+  .about .quote{border-left:3px solid var(--orange);padding-left:16px;color:var(--ink-2);font-style:italic;margin-top:6px}
+
+  /* ---- Timeline ---- */
+  .tl{position:relative;margin-top:8px;padding-left:6px}
+  .tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--line),var(--line))}
+  .tl-item{position:relative;padding:0 0 30px 40px}
+  .tl-item::before{content:"";position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #C3CCDC}
+  .tl-item.turn::before{border-color:var(--orange);background:var(--orange-soft);box-shadow:0 0 0 4px rgba(232,113,10,.12)}
+  .tl-year{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--ink-2)}
+  .tl-item.turn .tl-year{color:var(--orange)}
+  .tl-title{font-size:17px;font-weight:700;margin:3px 0 4px;letter-spacing:-.01em}
+  .tl-turn-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;color:#B35707;background:var(--orange-soft);border:1px solid #F6D8BE;border-radius:5px;padding:2px 7px;margin-left:8px;vertical-align:middle}
+  .tl-desc{font-size:14px;color:var(--ink-2);max-width:640px}
+  .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .tag{font-family:var(--mono);font-size:11px;color:var(--navy);background:#EEF1F7;border:1px solid #E1E6F0;border-radius:6px;padding:3px 8px}
+
+  /* ---- Project cards (IT PM) ---- */
+  .pf-note{font-size:13.5px;color:var(--ink-2);margin:-16px 0 26px;font-family:var(--mono)}
+  .pf-group{margin-bottom:30px}
+  .pf-group-label{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .pf-group-label .gl{font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+  .pf-group-label .gy{font-family:var(--mono);font-size:11.5px;color:var(--orange);font-weight:600;background:var(--orange-soft);border:1px solid #F6D8BE;border-radius:5px;padding:2px 8px}
+  .pf-group-label .gline{flex:1;height:1px;background:var(--line)}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  @media (max-width:820px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.pf-grid{grid-template-columns:1fr}}
+  .pf-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .pf-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.09);border-color:#d3dae6}
+  .pf-card.key{border-left:3px solid var(--orange)}
+  .pf-card .cli{font-size:15.5px;font-weight:700;letter-spacing:-.01em}
+  .pf-card .role{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.55}
+  .pf-card .pf-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+  .pf-tags .pt{font-family:var(--mono);font-size:10.5px;color:var(--navy);background:#EEF1F7;border:1px solid #E1E6F0;border-radius:5px;padding:2px 7px}
+  .pf-tags .pt.o{background:var(--orange-soft);color:#9a4d08;border-color:#F6D8BE}
+  /* 킬러 케이스 스터디 */
+  .pf-card.key .cli{display:flex;align-items:center;gap:8px}
+  .pf-card.key .star{font-family:var(--mono);font-size:10px;font-weight:700;color:#fff;background:var(--orange);border-radius:4px;padding:2px 6px;letter-spacing:.04em}
+  .pf-cs{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+  .pf-cs .row{display:flex;gap:8px;font-size:12.5px;line-height:1.5}
+  .pf-cs .rk{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--orange);min-width:46px;padding-top:2px;letter-spacing:.03em}
+  .pf-cs .rv{color:#3a4552}
+  .pf-cs .rv b{color:var(--navy);font-weight:700}
+
+  /* ---- AI QA bridge ---- */
+  .qa-bridge{background:var(--navy);color:#fff;border-radius:18px;padding:34px;position:relative;overflow:hidden}
+  .qa-bridge::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 240px at 90% 0%,rgba(232,113,10,.18),transparent 60%)}
+  .qa-bridge .k{font-family:var(--mono);font-size:12px;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}
+  .qa-bridge h3{font-size:22px;font-weight:800;margin:10px 0 8px;letter-spacing:-.01em}
+  .qa-bridge p{color:#D5DEEE;font-size:14.5px;max-width:620px}
+  .qa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 24px;position:relative}
+  .qa-mini{background:rgba(255,255,255,.06);border:1px solid var(--navy-3);border-radius:11px;padding:15px}
+  .qa-mini .qn{font-family:var(--mono);font-size:11px;color:#9FB0CC}
+  .qa-mini .qt{font-weight:700;font-size:14.5px;margin-top:4px}
+  .qa-mini .qd{font-size:12px;color:#AEBBD2;margin-top:5px;line-height:1.5}
+  @media (max-width:640px){.qa-cards{grid-template-columns:1fr}}
+
+  /* ---- Skills ---- */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media (max-width:720px){.skills{grid-template-columns:1fr}}
+  .skill-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .skill-col h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .skill-col .cap{font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-bottom:16px}
+  .skill-col.qa h4{color:var(--orange)}
+  .skill-row{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:13px;color:#2b3441;background:#F1F3F7;border:1px solid #E4E8F0;border-radius:8px;padding:6px 11px}
+  .skill-col.qa .chip{background:var(--orange-soft);border-color:#F6D8BE;color:#9a4d08}
+
+  /* ---- Contact ---- */
+  .contact-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-wrap:wrap;gap:26px;align-items:center}
+  .contact-box .ci{min-width:180px}
+  .contact-box .ci .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
+  .contact-box .ci .val{font-size:15px;font-weight:600;margin-top:3px}
+  .contact-box .ci .val a:hover{color:var(--orange)}
+  .contact-box .dl{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+  footer{background:var(--navy-2);color:#8595b3;padding:30px 0;text-align:center;font-size:12.5px;font-family:var(--mono)}
+
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">최성우<span class="k">/ 崔作家</span></span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#career">Career</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#aiqa">AI QA</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="./qa/">QA 포트폴리오 →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="console">
+  <div class="hero wrap">
+    <div class="path">Advertising AE <b>→</b> IT PM <b>→</b> AI QA</div>
+    <h1>광고에서 시작해,<br><span class="accent">AI 품질</span>에 도달하다.</h1>
+    <p class="lede">
+      카피로 사람의 마음을 움직이던 광고 AE에서 출발해, 시스템을 설계하는 IT PM으로 커리어를 쌓았습니다.
+      그리고 지금, <b>AI가 만든 결과의 품질을 어떻게 측정하고 신뢰할 것인가</b>라는 새로운 질문 앞에 서 있습니다.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="./qa/">AI QA 포트폴리오 보기</a>
+      <a class="btn btn--ghost" href="#career">경력 타임라인</a>
+      <a class="btn btn--ghost" href="#contact">연락처 · 서류</a>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="n">Multi</div><div class="l">공공 · 기업 · 글로벌 도메인</div></div>
+      <div class="metric"><div class="n">Global</div><div class="l">3개국 공공 PM</div></div>
+      <div class="metric"><div class="n">특허·수상</div><div class="l">정부과제 다수 수주</div></div>
+      <div class="metric"><div class="n">10</div><div class="l">AI QA 프로젝트</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ABOUT ===== -->
+<section class="block wrap about" id="about">
+  <div class="sec-head"><span class="idx">01</span><h2>소개</h2></div>
+  <p>저는 <b>광고 AE</b>로 사회생활을 시작했습니다. 카피와 기획서로 소비자의 마음이 움직이는 순간이 좋았지만, 그 움직임을 감이 아니라 근거로 설명하고 싶다는 갈증이 저를 <b>IT 기획과 프로젝트 관리</b>로 이끌었습니다.</p>
+  <p>이후 국내 SI·솔루션부터 페루·콜롬비아·에콰도르 광업부 시스템을 이끈 글로벌 공공 PM까지, 폭넓은 도메인에서 요구사항 분석·기획·리딩을 해왔습니다. 어려운 조건에서도 끝까지 결과를 만드는 일을 반복했습니다.</p>
+  <p>지금은 <b>AI 품질평가와 데이터 분석</b>으로 전문성을 확장하고 있습니다. LLM이 만든 결과의 품질을 지표로 평가하는 일은, 그동안 제가 붙잡아 온 질문의 연장선입니다.</p>
+  <p class="quote">"사람은 왜 하필 이 콘텐츠에, 이 화면에 반응하는가."</p>
+</section>
+
+<!-- ===== CAREER TIMELINE ===== -->
+<section class="block wrap" id="career">
+  <div class="sec-head"><span class="idx">02</span><h2>경력 타임라인</h2></div>
+  <div class="tl">
+
+    <div class="tl-item turn">
+      <div class="tl-year">1996</div>
+      <div class="tl-title">광고 AE로 출발<span class="tl-turn-badge">전환 ①</span></div>
+      <div class="tl-desc">동국대 전산원 졸업, 한국광고연구원 AE과정 수료. 소비자를 움직이는 메시지의 원리를 배우며 커리어를 시작.</div>
+      <div class="tl-tags"><span class="tag">광고 AE</span><span class="tag">기획</span></div>
+    </div>
+
+    <div class="tl-item turn">
+      <div class="tl-year">2000s</div>
+      <div class="tl-title">IT 기획 · PM으로 전환<span class="tl-turn-badge">전환 ②</span></div>
+      <div class="tl-desc">‘감’을 ‘근거’로 바꾸고 싶다는 갈증으로 IT 기획에 합류. 요구사항 분석부터 UI/UX 설계까지 영역 확장.</div>
+      <div class="tl-tags"><span class="tag">BRD/FRD</span><span class="tag">UI/UX 스토리보드</span><span class="tag">WBS</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2004</div>
+      <div class="tl-title">서울시 2기 교통카드 · KAID 우수디자인상</div>
+      <div class="tl-desc">KT와 협업한 서울시 2기 교통카드 프로젝트에서 최우수 UI/UX 평가. 사용자 중심 설계를 데이터와 관점으로 증명.</div>
+      <div class="tl-tags"><span class="tag">KT 협업</span><span class="tag">최우수 UI/UX</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2006</div>
+      <div class="tl-title">TBI 창업보육 선정 (경쟁률 162:1)</div>
+      <div class="tl-desc">고경쟁 정부과제를 문제 정의부터 제안·설득까지 직접 리딩해 수주.</div>
+      <div class="tl-tags"><span class="tag">제안서</span><span class="tag">경쟁 PT</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2012</div>
+      <div class="tl-title">기아차 메시지슈터 개발 PM · 특허</div>
+      <div class="tl-desc">2개월 초단납기 프로젝트를 목표 일정 내 완수, 관련 특허 확보. 몰입과 성취의 실증.</div>
+      <div class="tl-tags"><span class="tag">개발 PM</span><span class="tag">특허</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2013 · 2020</div>
+      <div class="tl-title">신기술개발지원 (80:1) · NIPA 지역SW</div>
+      <div class="tl-desc">신기술개발지원 선정에 이어 NIPA 지역SW ‘블랙아이스’ 시스템 선정. 기획력과 수주 역량의 지속 증명.</div>
+      <div class="tl-tags"><span class="tag">정부과제</span><span class="tag">지역SW</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2024</div>
+      <div class="tl-title">글로벌 공공 IT PM — 페루 · 콜롬비아 · 에콰도르</div>
+      <div class="tl-desc">페루 광업부 PCM 고도화(요구사항 달성률 95%), 콜롬비아 공기순환, 에콰도르 광해관리 시스템을 다국가 환경에서 리딩.</div>
+      <div class="tl-tags"><span class="tag">글로벌 PM</span><span class="tag">광업부 시스템</span><span class="tag">달성률 95%</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2023 – 2025</div>
+      <div class="tl-title">(주)지앤 기획 책임연구원</div>
+      <div class="tl-desc">기획 책임연구원으로 요구사항 분석·제안·프로젝트 리딩 수행.</div>
+      <div class="tl-tags"><span class="tag">책임연구원</span><span class="tag">기획</span></div>
+    </div>
+
+    <div class="tl-item turn">
+      <div class="tl-year">2025 –</div>
+      <div class="tl-title">AI QA · 데이터 분석으로 전환<span class="tl-turn-badge">전환 ③</span></div>
+      <div class="tl-desc">AI 품질평가 파이프라인과 LLM 평가 프레임워크(RaiT)를 직접 설계. pytest·Playwright·AWS·SQL을 실무로 익히며 새로운 전문성을 쌓는 중.</div>
+      <div class="tl-tags"><span class="tag">LLM 평가</span><span class="tag">RaiT</span><span class="tag">pytest</span><span class="tag">AWS</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== IT PM PORTFOLIO ===== -->
+<section class="block wrap" id="portfolio">
+  <div class="sec-head"><span class="idx">03</span><h2>대표 프로젝트 · IT PM</h2></div>
+  <p class="pf-note">// AI 전환 이전, 직접 기획·설계·리딩한 프로젝트</p>
+
+  <!-- 글로벌 공공 -->
+  <div class="pf-group">
+    <div class="pf-group-label"><span class="gl">글로벌 공공 시스템</span><span class="gy">2024</span><span class="gline"></span></div>
+    <div class="pf-grid">
+      <div class="pf-card key">
+        <div class="cli"><span class="star">KEY</span>페루 광업부 · Osinergmin</div>
+        <div class="pf-cs">
+          <div class="row"><span class="rk">과제</span><span class="rv">다국가·다이해관계자 환경의 광업 감독 시스템(PCM 고도화)과 위성 광미퇴적물 모니터링을 원격으로 리딩.</span></div>
+          <div class="row"><span class="rk">역할</span><span class="rv">요구사항 분석, 모바일 쿠폰 사업 제안서, UI/UX 설계 총괄.</span></div>
+          <div class="row"><span class="rk">성과</span><span class="rv"><b>요구사항 달성률 95%</b>, 현지 감독기구 시스템 구축.</span></div>
+        </div>
+        <div class="pf-tags"><span class="pt o">글로벌 PM</span><span class="pt">제안서</span><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">콜롬비아 광업부</div>
+        <div class="role">지하 갱도의 공기 흐름을 안전하게 관리하기 위한 갱도·갱구 공기순환 시스템 구조를 기획하고 UI/UX를 설계.</div>
+        <div class="pf-tags"><span class="pt">시스템 기획</span><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">에콰도르 광업부</div>
+        <div class="role">광산이 남긴 환경 피해를 추적·관리하는 광해관리 정보시스템을 기획하고 화면을 설계.</div>
+        <div class="pf-tags"><span class="pt">정보시스템</span><span class="pt">UI/UX</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 국내 공공·기업 -->
+  <div class="pf-group">
+    <div class="pf-group-label"><span class="gl">국내 공공 · 기업</span><span class="gy">Public · Enterprise</span><span class="gline"></span></div>
+    <div class="pf-grid">
+      <div class="pf-card key">
+        <div class="cli"><span class="star">KEY</span>서울버스 2기 교통카드</div>
+        <div class="pf-cs">
+          <div class="row"><span class="rk">과제</span><span class="rv">가맹점과 사용자, 서로 다른 두 사용자군을 만족시키는 교통카드 시스템 구축.</span></div>
+          <div class="row"><span class="rk">역할</span><span class="rv">KT 협업, 구축사업 제안서 및 가맹점·사용자 UI/UX 설계.</span></div>
+          <div class="row"><span class="rk">성과</span><span class="rv"><b>최우수 UI/UX 평가</b> 획득.</span></div>
+        </div>
+        <div class="pf-tags"><span class="pt o">최우수 UI/UX</span><span class="pt">제안서</span></div>
+      </div>
+      <div class="pf-card key">
+        <div class="cli"><span class="star">KEY</span>기아자동차 메시지슈터</div>
+        <div class="pf-cs">
+          <div class="row"><span class="rk">과제</span><span class="rv">MMS·이메일·SNS로 확산되는 메시지슈터 솔루션을 2개월 초단납기로 개발.</span></div>
+          <div class="row"><span class="rk">역할</span><span class="rv">UI/UX 설계 및 개발 PM, 온라인 마케팅 연계.</span></div>
+          <div class="row"><span class="rk">성과</span><span class="rv"><b>납기 내 완수 + 특허 확보(2012)</b>.</span></div>
+        </div>
+        <div class="pf-tags"><span class="pt o">개발 PM</span><span class="pt">특허</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">대한민국 국회</div>
+        <div class="role">100년의 국회 기록을 대중이 쉽게 접하도록 — 국회 웹진의 UI/UX와 디자인을 총괄.</div>
+        <div class="pf-tags"><span class="pt">UI/UX</span><span class="pt">디자인 총괄</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">현대자동차</div>
+        <div class="role">모바일 애플리케이션 UI/UX 설계.</div>
+        <div class="pf-tags"><span class="pt">모바일</span><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">안전보건공단</div>
+        <div class="role">흩어진 작업환경 데이터를 한 곳에서 관리하는 종합 관리플랫폼을 기획하고 UI/UX를 설계.</div>
+        <div class="pf-tags"><span class="pt">플랫폼 기획</span><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">국립공원관리공단</div>
+        <div class="role">야생동물을 IoT로 관측·보호하는 관리 플랫폼(WP)의 IoT 관리 화면을 설계.</div>
+        <div class="pf-tags"><span class="pt">IoT</span><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">엘지유플러스</div>
+        <div class="role">통화연결음 관리 시스템 UI/UX 설계.</div>
+        <div class="pf-tags"><span class="pt">UI/UX</span></div>
+      </div>
+      <div class="pf-card">
+        <div class="cli">국토해양부 · (사)벤처기업협회 외</div>
+        <div class="role">HS 피해보상 시스템 제안·UI/UX, 글로벌벤처스 사이트 기획, M7 분양관 키오스크 개발 PM 등.</div>
+        <div class="pf-tags"><span class="pt">제안서</span><span class="pt">키오스크</span><span class="pt">UI/UX</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI QA BRIDGE ===== -->
+<section class="block wrap" id="aiqa">
+  <div class="sec-head"><span class="idx">04</span><h2>AI QA 전환 성과</h2></div>
+  <div class="qa-bridge">
+    <div class="k">Career Transition · in progress</div>
+    <h3>축적된 기획력을 AI 품질에 적용합니다</h3>
+    <p>남이 만든 툴을 실행해 본 수준이 아니라, ‘AI가 어떤 결과를 좋다고 판단하는가’라는 평가 기준 자체를 설계했습니다. 대표 프로젝트 3개입니다.</p>
+    <div class="qa-cards">
+      <div class="qa-mini"><div class="qn">05 / RAIT</div><div class="qt">RaiT 품질평가 시스템</div><div class="qd">LLM 응답을 8개 지표로 채점하는 자체 평가 프레임워크</div></div>
+      <div class="qa-mini"><div class="qn">01 / VOC</div><div class="qt">VOC 멀티에이전트 QA</div><div class="qd">멀티에이전트 + LLM Judge로 품질 게이트 운영</div></div>
+      <div class="qa-mini"><div class="qn">02 / QP</div><div class="qt">AI 품질 플랫폼</div><div class="qd">품질 지표 집계·모니터링 대시보드</div></div>
+    </div>
+    <a class="btn btn--primary" href="./qa/">전체 10개 프로젝트 보기 →</a>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="block wrap" id="skills">
+  <div class="sec-head"><span class="idx">05</span><h2>역량</h2></div>
+  <div class="skills">
+    <div class="skill-col">
+      <h4>기획 · 프로젝트 관리</h4>
+      <div class="cap">Core · foundation</div>
+      <div class="skill-row">
+        <span class="chip">요구사항 분석 (BRD/FRD)</span><span class="chip">기능정의서</span>
+        <span class="chip">UI/UX 스토리보드</span><span class="chip">WBS · 리스크 관리</span>
+        <span class="chip">제안서 · 경쟁 PT</span><span class="chip">글로벌 공공 PM</span>
+      </div>
+    </div>
+    <div class="skill-col qa">
+      <h4>AI QA · 데이터 분석</h4>
+      <div class="cap">2025 – · in progress</div>
+      <div class="skill-row">
+        <span class="chip">LLM 평가 (RaiT)</span><span class="chip">LLM Judge</span>
+        <span class="chip">pytest</span><span class="chip">Playwright</span>
+        <span class="chip">AWS</span><span class="chip">SQL</span>
+        <span class="chip">Jira</span><span class="chip">ADsP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="block wrap" id="contact">
+  <div class="sec-head"><span class="idx">06</span><h2>연락처 · 서류</h2></div>
+  <div class="contact-box">
+    <div class="ci">
+      <div class="lbl">Email</div>
+      <div class="val"><a href="mailto:mahokani@naver.com">mahokani@naver.com</a></div>
+    </div>
+    <div class="ci">
+      <div class="lbl">Links</div>
+      <!-- [채우기] {{GITHUB_USER}} / {{LINKEDIN_URL}} -->
+      <div class="val"><a href="https://github.com/{{GITHUB_USER}}" target="_blank" rel="noopener">GitHub</a> · <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <div class="dl">
+      <!-- [채우기] 실제 PDF 경로 -->
+      <a class="btn btn--primary" href="./assets/resume.pdf" target="_blank" rel="noopener">이력서 · 경력기술서 (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 최성우 · 崔作家 &nbsp;·&nbsp; IT PM → AI QA · 품질평가 · 데이터 분석</footer>
+
+<script>
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const items=document.querySelectorAll('.tl-item, .pf-card, .qa-mini, .skill-col');
+    items.forEach(c=>{c.style.opacity='0';c.style.transform='translateY(12px)';});
+    const io=new IntersectionObserver((es)=>{
+      es.forEach(e=>{if(e.isIntersecting){
+        e.target.style.transition='opacity .5s ease, transform .5s ease';
+        e.target.style.opacity='1';e.target.style.transform='translateY(0)';
+        io.unobserve(e.target);
+      }});
+    },{threshold:.12});
+    items.forEach(c=>io.observe(c));
+  }
+</script>
+</body>
+</html>

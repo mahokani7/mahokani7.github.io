@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRJ_02 · AI 품질 평가 플랫폼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="console-bar">
+  <div class="console-bar__inner">
+    <span class="leds"><i class="led led--r"></i><i class="led led--y"></i><i class="led led--g"></i></span>
+    <span class="console-bar__path">~/portfolio/prj_02 $ <b>cat README.md</b></span>
+    <nav class="console-nav">
+      <a href="index.html">Projects</a>
+      <a href="../index.html">← 메인 홈</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">Killer Module · PRJ_02</span>
+    <h1>AI 품질 평가 플랫폼</h1>
+    <p class="lede">일회성 테스트를 넘어, LLM 산출물의 품질을 상시 계측하는 평가 플랫폼입니다. 루브릭·Judge 프롬프트·스코어링 보드를 하나로 묶어 QA를 재사용 가능한 제품으로 만들었습니다.</p>
+    <p class="role-line">// LLM Judge 파이프라인 · T-GEO AI 스코어링 보드 연계 설계</p>
+  </section>
+
+  <section class="section">
+    <div class="metric-cards">
+      <div class="metric-card"><div class="v">8-axis</div><div class="k">평가 프레임</div></div>
+      <div class="metric-card"><div class="v">JSON</div><div class="k">Judge 출력 스키마</div></div>
+      <div class="metric-card"><div class="v">25010</div><div class="k">ISO/IEC 품질표준</div></div>
+      <div class="metric-card"><div class="v">Board</div><div class="k">스코어링 연계</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="panel">
+      <h2><span class="section__num">#</span> 개요</h2>
+      <p style="color:var(--ink-2)">AI 산출물 품질은 매 배포마다 흔들립니다. 이 플랫폼은 평가 기준(루브릭)과 Judge 모델 프롬프트, 결과를 집계하는 스코어링 보드를 표준화해, 누가 언제 실행해도 같은 잣대로 품질을 계량하도록 설계했습니다. RaiT 8기준을 T-GEO AI 스코어링 보드와 연계하는 구조를 채택했습니다.</p>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 핵심 구성</h2>
+      <dl class="kv">
+        <dt>루브릭 엔진</dt><dd>지표별 채점 기준·가중치 정의, 도메인별 커스터마이즈</dd>
+        <dt>Judge 프롬프트</dt><dd>JSON 출력 스키마 기반의 구조화 채점(점수+근거)</dd>
+        <dt>스코어링 보드</dt><dd>지표별 점수 집계·추세 시각화, 회귀 감지</dd>
+        <dt>표준 정합</dt><dd>ISO/IEC 25010 품질 특성과 매핑</dd>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 기술 스택</h2>
+      <div class="stack">
+        <span class="chip">LLM-as-a-Judge</span><span class="chip">Rubric</span><span class="chip">JSON Schema</span>
+        <span class="chip">Scoring Board</span><span class="chip">ISO/IEC 25010</span><span class="chip">Python</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2><span class="section__num">#</span> 성과</h2>
+      <ul style="color:var(--ink-2); padding-left:18px; margin:0">
+        <li>평가 파이프라인 표준화로 재현 가능한 품질 측정 체계 확립</li>
+        <li>구조화(JSON) 출력으로 자동 집계·회귀 감지 가능</li>
+        <li>QA를 프로젝트 산출물이 아닌 재사용 자산으로 제품화</li>
+      </ul>
+    </div>
+  </section>
+
+  <a class="backlink" href="index.html">전체 프로젝트로 돌아가기</a>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="contact">
+      <span>최성우 (최작가)</span>
+      <a href="mailto:mahokani@naver.com">mahokani@naver.com</a>
+      <a href="tel:01050331779">010-5033-1779</a>
+    </div>
+    <div class="sig">// PRJ_02</div>
+  </div>
+</footer>
+
+</body>
+</html>
