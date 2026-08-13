@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>최성우 · IT PM에서 AI 품질까지</title>
-<meta name="description" content="광고 AE에서 IT PM으로, 다시 AI QA로. 전환의 여정과 커리어.">
+<title>최성우 · IT 기획 · 시스템 기획 · PM</title>
+<meta name="description" content="광고 AE에서 출발해 제품·서비스·시스템 기획과 UI/UX 설계, 공공·대기업·글로벌 프로젝트 PM으로 확장한 실무형 기획자. 20년+ 경력, AI QA로 전문성 확장 중.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +13,13 @@
 
 <!--
 ============================================================================
-  경력 사이트 (메인 홈)  ·  choishijak-site/index.html
+  경력 사이트 (메인 홈)  ·  mahokani7.github.io/index.html
 ============================================================================
-  구성: Hero → About → Career Timeline → AI QA 전환 → Skills → Contact
-  QA 포트폴리오(qa/index.html)와 디자인 통일. AI QA 섹션에서 qa/ 로 링크.
-
-  [Claude Code 채우기]
-  - {{GITHUB_USER}} / {{LINKEDIN_URL}} 링크
-  - assets/resume.pdf (이력서·경력기술서 PDF) 경로 확인
-  - 타임라인 연도·내용은 실제 이력 기준 최종 검토 (아래는 저장된 경력 기반 초안)
+  참고: Notion 「최성우 이력서」 구조 반영
+  구성: Hero → 01 핵심 역량 → 02 학력·수상 → 03 스킬 → 04 경력(최신순)
+        → 05 업무 스타일 → 06 대표 프로젝트 → 07 핵심 프로젝트
+        → 08 AI QA 전환 → 09 연락처
+  경력 타임라인은 최근 이력이 맨 위(reverse chronological).
 ============================================================================
 -->
 
@@ -29,8 +27,10 @@
   :root{
     --navy:#1B2A4A; --navy-2:#16233D; --navy-3:#22345A;
     --orange:#E8710A; --orange-soft:#FFF1E4;
+    --blue:#2D6BD6; --blue-soft:#EAF1FC;
+    --green:#2FA36B; --green-soft:#E7F5EE;
+    --purple:#7A5AD6; --purple-soft:#F0ECFB;
     --bg:#F6F7F9; --card:#FFFFFF; --ink:#1C2430; --ink-2:#5A6474; --line:#E6E9EF;
-    --live:#2FA36B;
     --mono:'JetBrains Mono','SFMono-Regular',ui-monospace,Consolas,monospace;
     --sans:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
     --radius:14px; --maxw:1000px;
@@ -46,115 +46,164 @@
   nav.top .wrap{display:flex;align-items:center;height:56px;gap:8px}
   nav.top .brand{font-weight:800;color:#fff;font-size:15.5px;letter-spacing:-.01em}
   nav.top .brand .k{font-family:var(--mono);color:var(--orange);font-size:13px;margin-left:6px}
-  nav.top .links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
-  nav.top .links a{font-size:13.5px;color:#C5D0E4;padding:7px 12px;border-radius:8px;transition:color .15s,background .15s}
+  nav.top .links{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  nav.top .links a{font-size:13px;color:#C5D0E4;padding:7px 10px;border-radius:8px;transition:color .15s,background .15s}
   nav.top .links a:hover{color:#fff;background:rgba(255,255,255,.06)}
   nav.top .links a.cta{color:#fff;background:var(--orange)}
   nav.top .links a.cta:hover{background:#cf6408}
-  @media (max-width:640px){nav.top .links a:not(.cta){display:none}}
+  @media (max-width:820px){nav.top .links a:not(.cta){display:none}}
 
   /* ---- Console Hero ---- */
   .console{background:var(--navy);color:#fff;position:relative;overflow:hidden}
   .console::before{content:"";position:absolute;inset:0;
     background:radial-gradient(820px 380px at 85% -20%,rgba(232,113,10,.20),transparent 60%)}
-  .hero{padding:70px 0 80px;position:relative}
-  .path{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:#9FB0CC;margin-bottom:22px}
+  .hero{padding:64px 0 66px;position:relative}
+  .path{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:#9FB0CC;margin-bottom:20px}
   .path b{color:var(--orange)}
-  .hero h1{font-size:clamp(29px,5.2vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1.14}
+  .hero h1{font-size:clamp(28px,5vw,48px);font-weight:800;letter-spacing:-.02em;line-height:1.16}
   .hero h1 .accent{color:var(--orange)}
-  .hero .lede{margin-top:22px;max-width:600px;font-size:clamp(15px,2vw,17.5px);color:#C9D3E6}
+  .hero .lede{margin-top:20px;max-width:640px;font-size:clamp(15px,2vw,17px);color:#C9D3E6}
   .hero .lede b{color:#fff;font-weight:600}
-  .hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+  .hero-actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:14.5px;font-weight:600;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s}
   .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   .btn--primary{background:var(--orange);color:#fff}
   .btn--primary:hover{transform:translateY(-2px)}
   .btn--ghost{border-color:#3a4d78;color:#dfe7f4}
   .btn--ghost:hover{border-color:#6d80a8;background:rgba(255,255,255,.04)}
-  .metrics{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px}
+  .metrics{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px}
   .metric{background:rgba(255,255,255,.05);border:1px solid var(--navy-3);border-radius:12px;padding:13px 20px;min-width:120px}
   .metric .n{font-family:var(--mono);font-size:24px;font-weight:700;color:#fff;letter-spacing:-.02em}
   .metric .l{font-size:12px;color:#9FB0CC;margin-top:2px}
 
   /* ---- Section ---- */
-  section.block{padding:72px 0}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+  section.block{padding:66px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap}
   .sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--orange);font-weight:600}
-  .sec-head h2{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:-.01em}
+  .sec-head h2{font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.01em}
+  .sec-head .en{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase}
+  .sec-head .klabel{font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+  .sec-copy{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.28;color:var(--navy);margin:2px 0 28px;max-width:760px}
+  .sec-copy .em{color:var(--orange)}
+  .sec-head + .lead-copy{margin-top:-16px}
+  .lead-copy{font-size:14.5px;color:var(--ink-2);max-width:680px;margin:0 0 26px;line-height:1.7}
+  .lead-copy b{color:var(--navy);font-weight:600}
+  .lead-copy .em{color:var(--orange);font-weight:600}
 
-  /* ---- About ---- */
-  .about p{font-size:16px;color:#2b3441;max-width:760px;margin-bottom:16px}
-  .about p b{color:var(--navy);font-weight:700}
-  .about .quote{border-left:3px solid var(--orange);padding-left:16px;color:var(--ink-2);font-style:italic;margin-top:6px}
+  /* ---- 01 Core Competencies (editorial / magazine) ---- */
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:720px){.comp-grid{grid-template-columns:1fr}}
+  .comp{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 24px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .comp:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.08);border-color:#d3dae6}
+  .comp .wm{position:absolute;top:4px;right:14px;font-family:var(--mono);font-size:74px;font-weight:700;color:#F0F2F6;line-height:1;letter-spacing:-.04em;pointer-events:none}
+  .comp .dom{font-family:var(--mono);font-size:10.5px;color:var(--orange);text-transform:uppercase;letter-spacing:.12em;position:relative}
+  .comp .ct{font-size:20px;font-weight:800;color:var(--navy);margin:8px 0 0;letter-spacing:-.02em;position:relative;line-height:1.25}
+  .comp .rule{height:1px;background:var(--line);margin:14px 0;position:relative}
+  .comp .cd{font-size:13.5px;color:#3a4552;line-height:1.65;position:relative;flex:1}
 
-  /* ---- Timeline ---- */
-  .tl{position:relative;margin-top:8px;padding-left:6px}
-  .tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--line),var(--line))}
-  .tl-item{position:relative;padding:0 0 30px 40px}
-  .tl-item::before{content:"";position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #C3CCDC}
-  .tl-item.turn::before{border-color:var(--orange);background:var(--orange-soft);box-shadow:0 0 0 4px rgba(232,113,10,.12)}
-  .tl-year{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--ink-2)}
-  .tl-item.turn .tl-year{color:var(--orange)}
-  .tl-title{font-size:17px;font-weight:700;margin:3px 0 4px;letter-spacing:-.01em}
-  .tl-turn-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;color:#B35707;background:var(--orange-soft);border:1px solid #F6D8BE;border-radius:5px;padding:2px 7px;margin-left:8px;vertical-align:middle}
-  .tl-desc{font-size:14px;color:var(--ink-2);max-width:640px}
-  .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
-  .tag{font-family:var(--mono);font-size:11px;color:var(--navy);background:#EEF1F7;border:1px solid #E1E6F0;border-radius:6px;padding:3px 8px}
+  /* ---- 02 Education & Awards ---- */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:720px){.edu-grid{grid-template-columns:1fr}}
+  .edu-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .edu-card h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .edu-item{padding:11px 0;border-bottom:1px dashed var(--line)}
+  .edu-item:last-child{border-bottom:0;padding-bottom:0}
+  .edu-item .t{font-size:15px;font-weight:700;color:var(--ink)}
+  .edu-item .s{font-size:12.5px;color:var(--ink-2);margin-top:2px;font-family:var(--mono)}
+  .award-list{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .award-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink)}
+  .award-list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);margin-top:8px;flex:none}
+  .award-list li b{color:var(--navy);font-weight:700}
 
-  /* ---- Project cards (IT PM) ---- */
-  .pf-note{font-size:13.5px;color:var(--ink-2);margin:-16px 0 26px;font-family:var(--mono)}
-  .pf-group{margin-bottom:30px}
-  .pf-group-label{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-  .pf-group-label .gl{font-size:14px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
-  .pf-group-label .gy{font-family:var(--mono);font-size:11.5px;color:var(--orange);font-weight:600;background:var(--orange-soft);border:1px solid #F6D8BE;border-radius:5px;padding:2px 8px}
-  .pf-group-label .gline{flex:1;height:1px;background:var(--line)}
-  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
-  @media (max-width:820px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:520px){.pf-grid{grid-template-columns:1fr}}
-  .pf-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;transition:transform .18s,box-shadow .18s,border-color .18s}
-  .pf-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.09);border-color:#d3dae6}
-  .pf-card.key{border-left:3px solid var(--orange)}
-  .pf-card .cli{font-size:15.5px;font-weight:700;letter-spacing:-.01em}
-  .pf-card .role{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.55}
-  .pf-card .pf-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
-  .pf-tags .pt{font-family:var(--mono);font-size:10.5px;color:var(--navy);background:#EEF1F7;border:1px solid #E1E6F0;border-radius:5px;padding:2px 7px}
-  .pf-tags .pt.o{background:var(--orange-soft);color:#9a4d08;border-color:#F6D8BE}
-  /* 킬러 케이스 스터디 */
-  .pf-card.key .cli{display:flex;align-items:center;gap:8px}
-  .pf-card.key .star{font-family:var(--mono);font-size:10px;font-weight:700;color:#fff;background:var(--orange);border-radius:4px;padding:2px 6px;letter-spacing:.04em}
-  .pf-cs{margin-top:10px;display:flex;flex-direction:column;gap:6px}
-  .pf-cs .row{display:flex;gap:8px;font-size:12.5px;line-height:1.5}
-  .pf-cs .rk{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--orange);min-width:46px;padding-top:2px;letter-spacing:.03em}
-  .pf-cs .rv{color:#3a4552}
-  .pf-cs .rv b{color:var(--navy);font-weight:700}
+  /* ---- 03 Skills (bars + icon tiles) ---- */
+  .skillbars{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px}
+  @media (max-width:640px){.skillbars{grid-template-columns:1fr}}
+  .sb{display:flex;align-items:center;gap:12px}
+  .si{width:36px;height:36px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:13px;color:#fff;letter-spacing:-.02em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+  .si svg{width:19px;height:19px}
+  .sb-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+  .sb-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .sb-name{font-size:14px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .sb-name .use{font-weight:400;color:var(--ink-2);font-size:12px;margin-left:6px}
+  .sb-pct{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--orange);flex:none}
+  .sb-track{height:8px;border-radius:6px;background:#EAEDF3;overflow:hidden}
+  .sb-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--navy),var(--orange));width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
+  @media (max-width:400px){.sb-name .use{display:none}}
+
+  /* ---- 04 Career Timeline (recent first) ---- */
+  .tl{position:relative;padding-left:6px}
+  .tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 26px 40px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:2px;top:5px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #C3CCDC}
+  .tl-item.key::before{border-color:var(--orange);background:var(--orange-soft);box-shadow:0 0 0 4px rgba(232,113,10,.12)}
+  .tl-year{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink-2)}
+  .tl-item.key .tl-year{color:var(--orange)}
+  .tl-title{font-size:16px;font-weight:700;margin:3px 0 4px;letter-spacing:-.01em}
+  .tl-role{font-weight:500;color:var(--ink-2);font-size:14px}
+  .key-badge{font-family:var(--mono);font-size:10px;font-weight:700;color:#fff;background:var(--orange);border-radius:4px;padding:2px 6px;margin-left:8px;vertical-align:middle;letter-spacing:.04em}
+  .tl-desc{font-size:13.5px;color:var(--ink-2);max-width:660px;margin-top:3px}
+  .tl-desc b{color:var(--navy);font-weight:700}
+
+  /* ---- 05 How I Work (editorial / magazine) ---- */
+  .hiw{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media (max-width:820px){.hiw{grid-template-columns:1fr 1fr}}
+  @media (max-width:480px){.hiw{grid-template-columns:1fr}}
+  .hiw-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 22px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .hiw-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.08);border-color:#d3dae6}
+  .hiw-card .wm{position:absolute;top:4px;right:14px;font-family:var(--mono);font-size:64px;font-weight:700;color:#F0F2F6;line-height:1;letter-spacing:-.04em;pointer-events:none}
+  .hiw-card .step{font-family:var(--mono);font-size:10.5px;color:var(--orange);text-transform:uppercase;letter-spacing:.12em;position:relative}
+  .hiw-card h4{font-size:17px;font-weight:800;color:var(--navy);margin:8px 0 0;letter-spacing:-.02em;position:relative;line-height:1.25}
+  .hiw-card .rule{height:1px;background:var(--line);margin:13px 0;position:relative}
+  .hiw-card p{font-size:13px;color:#3a4552;line-height:1.6;position:relative;flex:1}
+
+  /* ---- 06 Selected Projects (editorial / magazine) ---- */
+  .pf-group{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 24px 22px;position:relative;overflow:hidden;margin-bottom:16px;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .pf-group:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.08);border-color:#d3dae6}
+  .pf-group:last-child{margin-bottom:0}
+  .pf-group .wm{position:absolute;top:4px;right:16px;font-family:var(--mono);font-size:74px;font-weight:700;color:#F0F2F6;line-height:1;letter-spacing:-.04em;pointer-events:none}
+  .pf-group .dom{font-family:var(--mono);font-size:10.5px;color:var(--orange);text-transform:uppercase;letter-spacing:.12em;position:relative}
+  .pf-group .gl{display:block;font-size:20px;font-weight:800;color:var(--navy);margin:8px 0 3px;letter-spacing:-.02em;position:relative;line-height:1.25}
+  .pf-lead{font-size:13.5px;color:#3a4552;position:relative;margin:0}
+  .pf-group .rule{height:1px;background:var(--line);margin:14px 0;position:relative}
+  .pf-items{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative}
+  .pf-items li{display:flex;gap:12px;font-size:14px;line-height:1.55}
+  .pf-items li b{color:var(--navy);font-weight:700}
+  .pf-items li .mark{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--orange);white-space:nowrap;padding-top:3px;min-width:62px}
+
+  /* ---- 07 Project Highlights (editorial / magazine) ---- */
+  .ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:720px){.ph-grid{grid-template-columns:1fr}}
+  .ph{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:24px 24px 22px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .ph:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,42,74,.08);border-color:#d3dae6}
+  .ph .wm{position:absolute;top:4px;right:14px;font-family:var(--mono);font-size:74px;font-weight:700;color:#F0F2F6;line-height:1;letter-spacing:-.04em;pointer-events:none}
+  .ph .dom{font-family:var(--mono);font-size:10.5px;color:var(--orange);text-transform:uppercase;letter-spacing:.12em;position:relative}
+  .ph .pt{font-size:20px;font-weight:800;color:var(--navy);margin:8px 0 3px;letter-spacing:-.02em;position:relative;line-height:1.25}
+  .ph .pm{font-family:var(--mono);font-size:11px;color:var(--ink-2);position:relative}
+  .ph .rule{height:1px;background:var(--line);margin:14px 0;position:relative}
+  .ph .pd{font-size:13.5px;color:#3a4552;line-height:1.65;position:relative;flex:1}
+  .ph .pr{display:flex;align-items:center;gap:10px;margin-top:15px;position:relative}
+  .ph .pr .rk{font-family:var(--mono);font-size:10px;color:var(--orange);letter-spacing:.06em;white-space:nowrap}
+  .ph .pr .rv{font-size:13.5px;font-weight:700;color:var(--navy)}
 
   /* ---- AI QA bridge ---- */
   .qa-bridge{background:var(--navy);color:#fff;border-radius:18px;padding:34px;position:relative;overflow:hidden}
   .qa-bridge::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 240px at 90% 0%,rgba(232,113,10,.18),transparent 60%)}
-  .qa-bridge .k{font-family:var(--mono);font-size:12px;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}
-  .qa-bridge h3{font-size:22px;font-weight:800;margin:10px 0 8px;letter-spacing:-.01em}
-  .qa-bridge p{color:#D5DEEE;font-size:14.5px;max-width:620px}
+  .qa-bridge p{color:#D5DEEE;font-size:14.5px;max-width:640px}
   .qa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 24px;position:relative}
   .qa-mini{background:rgba(255,255,255,.06);border:1px solid var(--navy-3);border-radius:11px;padding:15px}
   .qa-mini .qn{font-family:var(--mono);font-size:11px;color:#9FB0CC}
   .qa-mini .qt{font-weight:700;font-size:14.5px;margin-top:4px}
   .qa-mini .qd{font-size:12px;color:#AEBBD2;margin-top:5px;line-height:1.5}
   @media (max-width:640px){.qa-cards{grid-template-columns:1fr}}
-
-  /* ---- Skills ---- */
-  .skills{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media (max-width:720px){.skills{grid-template-columns:1fr}}
-  .skill-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .skill-col h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px}
-  .skill-col .cap{font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-bottom:16px}
-  .skill-col.qa h4{color:var(--orange)}
-  .skill-row{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{font-size:13px;color:#2b3441;background:#F1F3F7;border:1px solid #E4E8F0;border-radius:8px;padding:6px 11px}
-  .skill-col.qa .chip{background:var(--orange-soft);border-color:#F6D8BE;color:#9a4d08}
+  .qa-cycle{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px;position:relative}
+  .qa-cycle .cyc{font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--navy-3);border-radius:7px;padding:6px 11px;letter-spacing:.02em}
+  .qa-cycle .cyc b{color:var(--orange);font-weight:700}
+  .qa-cycle .arw{color:#6d80a8;font-family:var(--mono);font-size:12px;align-self:center}
 
   /* ---- Contact ---- */
   .contact-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-wrap:wrap;gap:26px;align-items:center}
-  .contact-box .ci{min-width:180px}
+  .contact-box .ci{min-width:170px}
   .contact-box .ci .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
   .contact-box .ci .val{font-size:15px;font-weight:600;margin-top:3px}
   .contact-box .ci .val a:hover{color:var(--orange)}
@@ -172,11 +221,12 @@
   <div class="wrap">
     <span class="brand">최성우<span class="k">/ 崔作家</span></span>
     <div class="links">
-      <a href="#about">About</a>
-      <a href="#career">Career</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#aiqa">AI QA</a>
-      <a href="#contact">Contact</a>
+      <a href="#comp">핵심 역량</a>
+      <a href="#edu">학력·수상</a>
+      <a href="#skills">스킬</a>
+      <a href="#career">경력</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#contact">연락처</a>
       <a class="cta" href="./qa/">QA 포트폴리오 →</a>
     </div>
   </div>
@@ -185,11 +235,11 @@
 <!-- ===== HERO ===== -->
 <header class="console">
   <div class="hero wrap">
-    <div class="path">Advertising AE <b>→</b> IT PM <b>→</b> AI QA</div>
-    <h1>광고에서 시작해,<br><span class="accent">AI 품질</span>에 도달하다.</h1>
+    <div class="path">Advertising AE <b>→</b> IT 기획 · PM <b>→</b> AI QA</div>
+    <h1>무엇을 해야 하는지까지 스스로 정의하고,<br><span class="accent">결과로 만듭니다.</span></h1>
     <p class="lede">
-      카피로 사람의 마음을 움직이던 광고 AE에서 출발해, 시스템을 설계하는 IT PM으로 커리어를 쌓았습니다.
-      그리고 지금, <b>AI가 만든 결과의 품질을 어떻게 측정하고 신뢰할 것인가</b>라는 새로운 질문 앞에 서 있습니다.
+      광고 AE에서 출발해 서비스·시스템 기획, UI/UX 설계, 공공·대기업·글로벌 프로젝트 PM으로 확장한 <b>실무형 기획자</b>입니다.
+      요구사항 분석부터 설계·조율·QA·납품까지 <b>end-to-end 오너십</b>으로 끌고 가며, 지금은 <b>AI 품질(QA)</b>에서 ‘좋은 결과의 기준’ 자체를 설계합니다.
     </p>
     <div class="hero-actions">
       <a class="btn btn--primary" href="./qa/">AI QA 포트폴리오 보기</a>
@@ -197,252 +247,464 @@
       <a class="btn btn--ghost" href="#contact">연락처 · 서류</a>
     </div>
     <div class="metrics">
-      <div class="metric"><div class="n">Multi</div><div class="l">공공 · 기업 · 글로벌 도메인</div></div>
-      <div class="metric"><div class="n">Global</div><div class="l">3개국 공공 PM</div></div>
-      <div class="metric"><div class="n">특허·수상</div><div class="l">정부과제 다수 수주</div></div>
-      <div class="metric"><div class="n">10</div><div class="l">AI QA 프로젝트</div></div>
+      <div class="metric"><div class="n">20년+</div><div class="l">IT 기획 · PM</div></div>
+      <div class="metric"><div class="n">95%</div><div class="l">해외 고객 요구 달성</div></div>
+      <div class="metric"><div class="n">162:1</div><div class="l">정부과제 선정</div></div>
     </div>
   </div>
 </header>
 
-<!-- ===== ABOUT ===== -->
-<section class="block wrap about" id="about">
-  <div class="sec-head"><span class="idx">01</span><h2>소개</h2></div>
-  <p>저는 <b>광고 AE</b>로 사회생활을 시작했습니다. 카피와 기획서로 소비자의 마음이 움직이는 순간이 좋았지만, 그 움직임을 감이 아니라 근거로 설명하고 싶다는 갈증이 저를 <b>IT 기획과 프로젝트 관리</b>로 이끌었습니다.</p>
-  <p>이후 국내 SI·솔루션부터 페루·콜롬비아·에콰도르 광업부 시스템을 이끈 글로벌 공공 PM까지, 폭넓은 도메인에서 요구사항 분석·기획·리딩을 해왔습니다. 어려운 조건에서도 끝까지 결과를 만드는 일을 반복했습니다.</p>
-  <p>지금은 <b>AI 품질평가와 데이터 분석</b>으로 전문성을 확장하고 있습니다. LLM이 만든 결과의 품질을 지표로 평가하는 일은, 그동안 제가 붙잡아 온 질문의 연장선입니다.</p>
-  <p class="quote">"사람은 왜 하필 이 콘텐츠에, 이 화면에 반응하는가."</p>
+<!-- ===== 01 CORE COMPETENCIES ===== -->
+<section class="block wrap" id="comp">
+  <div class="sec-head"><span class="idx">01</span><span class="klabel">핵심 역량</span><span class="en">Core Competencies</span></div>
+  <h2 class="sec-copy">기획부터 품질까지 <span class="em">다 해내는</span> 사람.</h2>
+  <div class="comp-grid">
+    <div class="comp">
+      <div class="wm">01</div>
+      <div class="dom">Planning</div>
+      <div class="ct">서비스 · 시스템 기획</div>
+      <div class="rule"></div>
+      <div class="cd">요구사항 분석·추적, IA, User Flow, 기능정의서, 화면정의서, BRD/FRD</div>
+    </div>
+    <div class="comp">
+      <div class="wm">02</div>
+      <div class="dom">UI / UX</div>
+      <div class="ct">UI/UX 설계</div>
+      <div class="rule"></div>
+      <div class="cd">PC Web, Mobile App, Admin, 관제·모니터링 대시보드, 스토리보드</div>
+    </div>
+    <div class="comp">
+      <div class="wm">03</div>
+      <div class="dom">Project</div>
+      <div class="ct">프로젝트 관리</div>
+      <div class="rule"></div>
+      <div class="cd">WBS, 일정·범위·리스크 관리, 고객사·개발·디자인·운영 조율</div>
+    </div>
+    <div class="comp">
+      <div class="wm">04</div>
+      <div class="dom">Proposal</div>
+      <div class="ct">제안 · 수주</div>
+      <div class="rule"></div>
+      <div class="cd">정부과제·SI 제안서, 사업계획서, 경쟁 PT, R&D 사업화</div>
+    </div>
+    <div class="comp">
+      <div class="wm">05</div>
+      <div class="dom">AI Quality</div>
+      <div class="ct">품질 · AI QA</div>
+      <div class="rule"></div>
+      <div class="cd">테스트 설계·케이스, 결함 관리, LLM-as-a-Judge, 품질 지표·게이트, 측정→분석→개선→재검증</div>
+    </div>
+    <div class="comp">
+      <div class="wm">06</div>
+      <div class="dom">Marketing</div>
+      <div class="ct">마케팅 · 프로모션</div>
+      <div class="rule"></div>
+      <div class="cd">광고 AE, 온·오프라인 캠페인, 제품 마케팅, 이벤트·홍보</div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== CAREER TIMELINE ===== -->
-<section class="block wrap" id="career">
-  <div class="sec-head"><span class="idx">02</span><h2>경력 타임라인</h2></div>
+<!-- ===== 02 EDUCATION & ACHIEVEMENTS ===== -->
+<section class="block wrap" id="edu" style="padding-top:0">
+  <div class="sec-head"><span class="idx">02</span><span class="klabel">학력 · 수상</span><span class="en">Education &amp; Achievements</span></div>
+  <h2 class="sec-copy"><span class="em">성과로 증명</span>해온 사람.</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h4>🎓 학력 · 교육</h4>
+      <div class="edu-item">
+        <div class="t">AI 기반 소프트웨어 테스터(QA) 및 모니터링 실무 과정 수료</div>
+        <div class="s">대우능력개발원 × 서울시 50플러스 · 2026.05.27 – 08.07</div>
+      </div>
+      <div class="edu-item">
+        <div class="t">동국대학교 전산원 전공 프로그램 졸업</div>
+        <div class="s">학점 3.95 / 4.5</div>
+      </div>
+      <div class="edu-item">
+        <div class="t">한국광고연구원 기획(AE) 과정 수료</div>
+        <div class="s">1996</div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <h4>🏆 주요 성과</h4>
+      <ul class="award-list">
+        <li><b>KAID 우수디자인상</b></li>
+        <li><b>TBI 정부과제 162:1</b> 선정</li>
+        <li><b>신기술개발지원 80:1</b> 선정</li>
+        <li><b>지역 SW 서비스사업화지원</b> 선정</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 SKILLS ===== -->
+<section class="block wrap" id="skills" style="padding-top:0">
+  <div class="sec-head"><span class="idx">03</span><span class="klabel">스킬</span><span class="en">Skill</span></div>
+  <h2 class="sec-copy">도구를 <span class="em">활용할 줄 아는</span> 사람.</h2>
+  <div class="skillbars">
+    <div class="sb">
+      <div class="si" style="background:linear-gradient(135deg,#F97316,#E8710A)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Storyboard<span class="use">화면정의·사용자 흐름</span></div><div class="sb-pct">90%</div></div><div class="sb-track"><div class="sb-fill" data-pct="90"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#B7472A">P</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">PowerPoint<span class="use">제안·기획·발표자료</span></div><div class="sb-pct">90%</div></div><div class="sb-track"><div class="sb-fill" data-pct="90"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#0F5FA6">한</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">한컴한글<span class="use">공공 제안·행정문서</span></div><div class="sb-pct">90%</div></div><div class="sb-track"><div class="sb-fill" data-pct="90"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#000"><svg viewBox="0 0 24 24" fill="#fff"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Notion<span class="use">문서화·협업 구조화</span></div><div class="sb-pct">70%</div></div><div class="sb-track"><div class="sb-fill" data-pct="70"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#001E36;color:#31A8FF">Ps</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Photoshop<span class="use">UI/UX 산출물·보정</span></div><div class="sb-pct">60%</div></div><div class="sb-track"><div class="sb-fill" data-pct="60"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#330000;color:#FF9A00">Ai</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Illustrator<span class="use">벡터·아이콘·화면요소</span></div><div class="sb-pct">60%</div></div><div class="sb-track"><div class="sb-fill" data-pct="60"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#217346">X</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Excel<span class="use">데이터 정리·표·차트</span></div><div class="sb-pct">60%</div></div><div class="sb-track"><div class="sb-fill" data-pct="60"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#2B579A">W</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Word<span class="use">보고서·서식 편집</span></div><div class="sb-pct">60%</div></div><div class="sb-track"><div class="sb-fill" data-pct="60"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#0052CC"><svg viewBox="0 0 24 24" fill="#fff"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"/></svg></div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Jira<span class="use">이슈 추적·칸반</span></div><div class="sb-pct">50%</div></div><div class="sb-track"><div class="sb-fill" data-pct="50"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#007ACC;font-size:14px">&lt;/&gt;</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">VS Code<span class="use">Python·웹 실행·테스트</span></div><div class="sb-pct">50%</div></div><div class="sb-track"><div class="sb-fill" data-pct="50"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 CAREER (RECENT FIRST) ===== -->
+<section class="block wrap" id="career" style="padding-top:0">
+  <div class="sec-head"><span class="idx">04</span><span class="klabel">경력 사항</span><span class="en">Career</span></div>
+  <h2 class="sec-copy">현장에서 <span class="em">실행으로 보여준</span> 사람.</h2>
   <div class="tl">
 
-    <div class="tl-item turn">
-      <div class="tl-year">1996</div>
-      <div class="tl-title">광고 AE로 출발<span class="tl-turn-badge">전환 ①</span></div>
-      <div class="tl-desc">동국대 전산원 졸업, 한국광고연구원 AE과정 수료. 소비자를 움직이는 메시지의 원리를 배우며 커리어를 시작.</div>
-      <div class="tl-tags"><span class="tag">광고 AE</span><span class="tag">기획</span></div>
-    </div>
-
-    <div class="tl-item turn">
-      <div class="tl-year">2000s</div>
-      <div class="tl-title">IT 기획 · PM으로 전환<span class="tl-turn-badge">전환 ②</span></div>
-      <div class="tl-desc">‘감’을 ‘근거’로 바꾸고 싶다는 갈증으로 IT 기획에 합류. 요구사항 분석부터 UI/UX 설계까지 영역 확장.</div>
-      <div class="tl-tags"><span class="tag">BRD/FRD</span><span class="tag">UI/UX 스토리보드</span><span class="tag">WBS</span></div>
+    <div class="tl-item key">
+      <div class="tl-year">2023.04 – 2025.10</div>
+      <div class="tl-title">주식회사 지앤 <span class="tl-role">· 기획 책임연구원</span><span class="key-badge">KEY</span></div>
+      <div class="tl-desc">요구사항을 스스로 정의해 기능·화면으로 구조화하고, 제안·설계·이해관계자 조율·QA·납품까지 오너십으로 수행. <b>안전보건공단 작업환경 플랫폼</b>, <b>페루 광업부 시스템 고도화(요구사항 달성률 95%)</b>, 국립공원 야생동물 관리시스템.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2004</div>
-      <div class="tl-title">서울시 2기 교통카드 · KAID 우수디자인상</div>
-      <div class="tl-desc">KT와 협업한 서울시 2기 교통카드 프로젝트에서 최우수 UI/UX 평가. 사용자 중심 설계를 데이터와 관점으로 증명.</div>
-      <div class="tl-tags"><span class="tag">KT 협업</span><span class="tag">최우수 UI/UX</span></div>
+      <div class="tl-year">2022.06 – 2022.07</div>
+      <div class="tl-title">백우기업(주) <span class="tl-role">· 기획 책임연구원</span></div>
+      <div class="tl-desc">환경 담당 기사 최적경로 제안 시스템 기획, 서비스 구조·화면 흐름 설계.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2006</div>
-      <div class="tl-title">TBI 창업보육 선정 (경쟁률 162:1)</div>
-      <div class="tl-desc">고경쟁 정부과제를 문제 정의부터 제안·설득까지 직접 리딩해 수주.</div>
-      <div class="tl-tags"><span class="tag">제안서</span><span class="tag">경쟁 PT</span></div>
+      <div class="tl-year">2021.12 – 2022.05</div>
+      <div class="tl-title">주식회사 스타일쉽 <span class="tl-role">· 관리 팀장(계약직)</span></div>
+      <div class="tl-desc">쇼핑몰 운영 및 입·출고·발송 시스템 고도화, 운영 프로세스 개선·관리.</div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-year">2019.11 – 2021.10</div>
+      <div class="tl-title">주식회사 하랑컴퍼니 <span class="tl-role">· 기획 실장</span><span class="key-badge">KEY</span></div>
+      <div class="tl-desc">문제 정의부터 R&D 기획·협약·개발 PM까지 단독으로 주도. <b>열화상 카메라 기반 블랙아이스 예측·대응 시스템</b> 기획·개발 총괄, 지역 SW 서비스사업화지원 선정.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2012</div>
-      <div class="tl-title">기아차 메시지슈터 개발 PM · 특허</div>
-      <div class="tl-desc">2개월 초단납기 프로젝트를 목표 일정 내 완수, 관련 특허 확보. 몰입과 성취의 실증.</div>
-      <div class="tl-tags"><span class="tag">개발 PM</span><span class="tag">특허</span></div>
+      <div class="tl-year">2018.01 – 2019.01</div>
+      <div class="tl-title">(주)아이엠지윌 <span class="tl-role">· 기획 실장</span></div>
+      <div class="tl-desc">웹·시스템 기획, 기업 경영기획, 영업·프로젝트 관리. <b>대한민국 국회 웹진</b>, 벤처기업협회 글로벌벤처 플랫폼 개발 PM.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2013 · 2020</div>
-      <div class="tl-title">신기술개발지원 (80:1) · NIPA 지역SW</div>
-      <div class="tl-desc">신기술개발지원 선정에 이어 NIPA 지역SW ‘블랙아이스’ 시스템 선정. 기획력과 수주 역량의 지속 증명.</div>
-      <div class="tl-tags"><span class="tag">정부과제</span><span class="tag">지역SW</span></div>
+      <div class="tl-year">2014.12 – 2017.12</div>
+      <div class="tl-title">준스모크바베큐 <span class="tl-role">· 경영 지사장</span></div>
+      <div class="tl-desc">경영기획·사업기획·서비스 전략. 외식업 운영과 현장 중심의 고객·매출 관리.</div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-year">2012.06 – 2014.10</div>
+      <div class="tl-title">(주)쉬프트플러스 <span class="tl-role">· 기획실 실장</span><span class="key-badge">KEY</span></div>
+      <div class="tl-desc">요구사항·Spec 확정부터 Android/iOS 개발·QA·납품까지 리드. <b>기아자동차 메시지슈터 2개월 내 정의→QA→납품</b>, 쌍용자동차 프로모션, CES 2014 스마트미러.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2024</div>
-      <div class="tl-title">글로벌 공공 IT PM — 페루 · 콜롬비아 · 에콰도르</div>
-      <div class="tl-desc">페루 광업부 PCM 고도화(요구사항 달성률 95%), 콜롬비아 공기순환, 에콰도르 광해관리 시스템을 다국가 환경에서 리딩.</div>
-      <div class="tl-tags"><span class="tag">글로벌 PM</span><span class="tag">광업부 시스템</span><span class="tag">달성률 95%</span></div>
+      <div class="tl-year">2012.03 – 2012.06</div>
+      <div class="tl-title">(주)엘스위버 <span class="tl-role">· 기획과 과장</span></div>
+      <div class="tl-desc">관공서·대학교 사이트 컨설팅, 서비스·앱·UI/UX 기획. 국토해양부 HS 피해보상 시스템, 서울대·중부대학교 모바일 사이트.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-year">2023 – 2025</div>
-      <div class="tl-title">(주)지앤 기획 책임연구원</div>
-      <div class="tl-desc">기획 책임연구원으로 요구사항 분석·제안·프로젝트 리딩 수행.</div>
-      <div class="tl-tags"><span class="tag">책임연구원</span><span class="tag">기획</span></div>
+      <div class="tl-year">2010.11 – 2011.10</div>
+      <div class="tl-title">서원관광호텔 <span class="tl-role">· 경영기획 과장</span></div>
+      <div class="tl-desc">호텔·부대 영업장 관리, 경영기획. 운영·서비스·사업제휴 관리.</div>
     </div>
 
-    <div class="tl-item turn">
-      <div class="tl-year">2025 –</div>
-      <div class="tl-title">AI QA · 데이터 분석으로 전환<span class="tl-turn-badge">전환 ③</span></div>
-      <div class="tl-desc">AI 품질평가 파이프라인과 LLM 평가 프레임워크(RaiT)를 직접 설계. pytest·Playwright·AWS·SQL을 실무로 익히며 새로운 전문성을 쌓는 중.</div>
-      <div class="tl-tags"><span class="tag">LLM 평가</span><span class="tag">RaiT</span><span class="tag">pytest</span><span class="tag">AWS</span></div>
+    <div class="tl-item">
+      <div class="tl-year">2009.08 – 2010.10</div>
+      <div class="tl-title">위니웍스 <span class="tl-role">· 기획실 과장</span></div>
+      <div class="tl-desc">웹·시스템 기획, UI/UX, 매뉴얼 작성. 영상제어 시스템, 복지·상담센터·미군 귀국 관리 시스템, 산업간호협회.</div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-year">2006.04 – 2009.08</div>
+      <div class="tl-title">(주)더삼공일 <span class="tl-role">· 제품개발 및 기획 실장</span><span class="key-badge">KEY</span></div>
+      <div class="tl-desc">제품 가치와 시장을 스스로 정의해 사업계획·경쟁 PT로 수주, 개발부터 유통까지 실행. <b>산업자원부 TBI 7,600만원 유치(162:1)</b>, KAIST 벤처지원센터 입주.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2000.12 – 2006.02</div>
+      <div class="tl-title">제일 ISP <span class="tl-role">· 경영기획 실장</span></div>
+      <div class="tl-desc">공동창업, 웹·광고 기획, 콘텐츠 사업. 헤어정보 콘텐츠 제휴·운영, 홈페이지·광고 제작 납품.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">2000.04 – 2000.07</div>
+      <div class="tl-title">(주)포인트캐스트 <span class="tl-role">· 기획실 과장</span></div>
+      <div class="tl-desc">게임·서비스 기획, 스토리보드, 앱·UI/UX 기획.</div>
+    </div>
+
+    <div class="tl-item key">
+      <div class="tl-year">1995.06 – 2000.01</div>
+      <div class="tl-title">광커뮤니케이션 <span class="tl-role">· 경영기획 과장·실장</span><span class="key-badge">START</span></div>
+      <div class="tl-desc">공동창업, 광고기획·영업·카피, 매체 집행, 이벤트·프로모션. 한국토지공사·주택공사 인쇄광고 및 사이트, 기업·관공서 광고·행사. <b>커리어의 출발점.</b></div>
     </div>
 
   </div>
 </section>
 
-<!-- ===== IT PM PORTFOLIO ===== -->
-<section class="block wrap" id="portfolio">
-  <div class="sec-head"><span class="idx">03</span><h2>대표 프로젝트 · IT PM</h2></div>
-  <p class="pf-note">// AI 전환 이전, 직접 기획·설계·리딩한 프로젝트</p>
-
-  <!-- 글로벌 공공 -->
-  <div class="pf-group">
-    <div class="pf-group-label"><span class="gl">글로벌 공공 시스템</span><span class="gy">2024</span><span class="gline"></span></div>
-    <div class="pf-grid">
-      <div class="pf-card key">
-        <div class="cli"><span class="star">KEY</span>페루 광업부 · Osinergmin</div>
-        <div class="pf-cs">
-          <div class="row"><span class="rk">과제</span><span class="rv">다국가·다이해관계자 환경의 광업 감독 시스템(PCM 고도화)과 위성 광미퇴적물 모니터링을 원격으로 리딩.</span></div>
-          <div class="row"><span class="rk">역할</span><span class="rv">요구사항 분석, 모바일 쿠폰 사업 제안서, UI/UX 설계 총괄.</span></div>
-          <div class="row"><span class="rk">성과</span><span class="rv"><b>요구사항 달성률 95%</b>, 현지 감독기구 시스템 구축.</span></div>
-        </div>
-        <div class="pf-tags"><span class="pt o">글로벌 PM</span><span class="pt">제안서</span><span class="pt">UI/UX</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">콜롬비아 광업부</div>
-        <div class="role">지하 갱도의 공기 흐름을 안전하게 관리하기 위한 갱도·갱구 공기순환 시스템 구조를 기획하고 UI/UX를 설계.</div>
-        <div class="pf-tags"><span class="pt">시스템 기획</span><span class="pt">UI/UX</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">에콰도르 광업부</div>
-        <div class="role">광산이 남긴 환경 피해를 추적·관리하는 광해관리 정보시스템을 기획하고 화면을 설계.</div>
-        <div class="pf-tags"><span class="pt">정보시스템</span><span class="pt">UI/UX</span></div>
-      </div>
+<!-- ===== 05 HOW I WORK ===== -->
+<section class="block wrap" id="how" style="padding-top:0">
+  <div class="sec-head"><span class="idx">05</span><span class="klabel">업무 스타일</span><span class="en">How I Work</span></div>
+  <h2 class="sec-copy">무엇을 할지 <span class="em">스스로 판단</span>하는 사람.</h2>
+  <div class="hiw">
+    <div class="hiw-card">
+      <div class="wm">01</div>
+      <div class="step">Phase 01</div>
+      <h4>가치 분석</h4>
+      <div class="rule"></div>
+      <p>고객의 요청을 사업 목표와 사용자 문제로 다시 정의합니다.</p>
+    </div>
+    <div class="hiw-card">
+      <div class="wm">02</div>
+      <div class="step">Phase 02</div>
+      <h4>구조화</h4>
+      <div class="rule"></div>
+      <p>IA, User Flow, 기능정의와 화면으로 구현 가능한 형태를 만듭니다.</p>
+    </div>
+    <div class="hiw-card">
+      <div class="wm">03</div>
+      <div class="step">Phase 03</div>
+      <h4>조율</h4>
+      <div class="rule"></div>
+      <p>고객사·개발·디자인·운영의 언어를 문서와 기준으로 정렬합니다.</p>
+    </div>
+    <div class="hiw-card">
+      <div class="wm">04</div>
+      <div class="step">Phase 04</div>
+      <h4>구현 · 검증</h4>
+      <div class="rule"></div>
+      <p>일정·리스크를 관리하고, 결함을 측정·개선한 뒤 같은 조건으로 재검증합니다.</p>
     </div>
   </div>
+</section>
 
-  <!-- 국내 공공·기업 -->
+<!-- ===== 06 SELECTED PROJECTS ===== -->
+<section class="block wrap" id="projects" style="padding-top:0">
+  <div class="sec-head"><span class="idx">06</span><span class="klabel">대표 프로젝트</span><span class="en">Selected Projects</span></div>
+  <h2 class="sec-copy">산업을 가리지 않고 <span class="em">결과를 내는</span> 사람.</h2>
+
   <div class="pf-group">
-    <div class="pf-group-label"><span class="gl">국내 공공 · 기업</span><span class="gy">Public · Enterprise</span><span class="gline"></span></div>
-    <div class="pf-grid">
-      <div class="pf-card key">
-        <div class="cli"><span class="star">KEY</span>서울버스 2기 교통카드</div>
-        <div class="pf-cs">
-          <div class="row"><span class="rk">과제</span><span class="rv">가맹점과 사용자, 서로 다른 두 사용자군을 만족시키는 교통카드 시스템 구축.</span></div>
-          <div class="row"><span class="rk">역할</span><span class="rv">KT 협업, 구축사업 제안서 및 가맹점·사용자 UI/UX 설계.</span></div>
-          <div class="row"><span class="rk">성과</span><span class="rv"><b>최우수 UI/UX 평가</b> 획득.</span></div>
-        </div>
-        <div class="pf-tags"><span class="pt o">최우수 UI/UX</span><span class="pt">제안서</span></div>
-      </div>
-      <div class="pf-card key">
-        <div class="cli"><span class="star">KEY</span>기아자동차 메시지슈터</div>
-        <div class="pf-cs">
-          <div class="row"><span class="rk">과제</span><span class="rv">MMS·이메일·SNS로 확산되는 메시지슈터 솔루션을 2개월 초단납기로 개발.</span></div>
-          <div class="row"><span class="rk">역할</span><span class="rv">UI/UX 설계 및 개발 PM, 온라인 마케팅 연계.</span></div>
-          <div class="row"><span class="rk">성과</span><span class="rv"><b>납기 내 완수 + 특허 확보(2012)</b>.</span></div>
-        </div>
-        <div class="pf-tags"><span class="pt o">개발 PM</span><span class="pt">특허</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">대한민국 국회</div>
-        <div class="role">100년의 국회 기록을 대중이 쉽게 접하도록 — 국회 웹진의 UI/UX와 디자인을 총괄.</div>
-        <div class="pf-tags"><span class="pt">UI/UX</span><span class="pt">디자인 총괄</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">현대자동차</div>
-        <div class="role">모바일 애플리케이션 UI/UX 설계.</div>
-        <div class="pf-tags"><span class="pt">모바일</span><span class="pt">UI/UX</span></div>
-      </div>
-      <div class="pf-card key">
-        <div class="cli"><span class="star">KEY</span>안전보건공단</div>
-        <div class="pf-cs">
-          <div class="row"><span class="rk">과제</span><span class="rv">전국 위험물질 사업장의 작업환경 측정 데이터를 통합 관리하는 플랫폼 구축.</span></div>
-          <div class="row"><span class="rk">역할</span><span class="rv">요구사항 분석, 플랫폼 구조 기획, UI/UX 설계 총괄, 공단 협의 진행 사업 PM.</span></div>
-          <div class="row"><span class="rk">성과</span><span class="rv"><b>위험물질 센서 정보 데이터 통합·조회 시스템 구축 완료</b>.</span></div>
-        </div>
-        <div class="pf-tags"><span class="pt o">플랫폼 기획</span><span class="pt">UI/UX</span><span class="pt">센서 데이터 통합</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">국립공원관리공단</div>
-        <div class="role">야생동물을 IoT로 관측·보호하는 관리 플랫폼(WP)의 IoT 관리 화면을 설계.</div>
-        <div class="pf-tags"><span class="pt">IoT</span><span class="pt">UI/UX</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">엘지유플러스</div>
-        <div class="role">통화연결음 관리 시스템 UI/UX 설계.</div>
-        <div class="pf-tags"><span class="pt">UI/UX</span></div>
-      </div>
-      <div class="pf-card">
-        <div class="cli">국토해양부 · (사)벤처기업협회 외</div>
-        <div class="role">HS 피해보상 시스템 제안·UI/UX, 글로벌벤처스 사이트 기획, M7 분양관 키오스크 개발 PM 등.</div>
-        <div class="pf-tags"><span class="pt">제안서</span><span class="pt">키오스크</span><span class="pt">UI/UX</span></div>
-      </div>
+    <div class="wm">01</div>
+    <div class="dom">Global Government</div>
+    <span class="gl">글로벌 정부 시스템</span>
+    <p class="pf-lead">페루·콜롬비아·에콰도르 현지 요구를 스스로 분석해 시스템 구조와 UI/UX로 전환.</p>
+    <div class="rule"></div>
+    <ul class="pf-items">
+      <li><span class="mark">페루</span><span><b>PCM 고도화</b> · 기존 시스템 분석·고도화, 정부 부처 및 현지·국내 개발팀 협업 · 요구사항 달성률 95%</span></li>
+      <li><span class="mark">콜롬비아</span><span><b>공기순환</b> · 갱도 센서 측정값과 공기순환 기기의 동작·통신 구조 및 제어 UI/UX 설계</span></li>
+      <li><span class="mark">에콰도르</span><span><b>광해관리</b> · 페루 PCM 기반 정부 요구사항, 모바일 User Flow와 UI/UX 현지화</span></li>
+    </ul>
+  </div>
+
+  <div class="pf-group">
+    <div class="wm">02</div>
+    <div class="dom">Enterprise · Mobility</div>
+    <span class="gl">대기업 · 모빌리티 · 모바일</span>
+    <p class="pf-lead">짧은 납기와 복잡한 채널·사용자 흐름을 하나의 서비스로 통합.</p>
+    <div class="rule"></div>
+    <ul class="pf-items">
+      <li><span class="mark">기아차</span><span><b>메시지슈터</b> · MMS·이메일·SNS 통합 발송, Android/iOS UI/UX, 일정·QA 관리 · 2개월 내 납품</span></li>
+      <li><span class="mark">현대차</span><span><b>모바일 UI/UX</b> · 차량·고객 서비스의 화면 흐름과 핵심 기능 구조 설계</span></li>
+      <li><span class="mark">M7</span><span><b>분양관 키오스크</b> · 키오스크 UI/UX 설계 및 개발 PM</span></li>
+      <li><span class="mark">LG U+</span><span><b>통화연결음</b> · 관리 서비스 UI/UX 설계</span></li>
+    </ul>
+  </div>
+
+  <div class="pf-group">
+    <div class="wm">03</div>
+    <div class="dom">Public · Control Platform</div>
+    <span class="gl">공공 정보화 · 관제 플랫폼</span>
+    <p class="pf-lead">복잡한 센서·업무·정산 데이터를 사용자별 View로 구조화.</p>
+    <div class="rule"></div>
+    <ul class="pf-items">
+      <li><span class="mark">안전보건공단</span><span><b>작업환경 플랫폼</b> · 본사·지점·기업별 권한, 화학물질·센서·통신·응급신호 통합 화면 설계</span></li>
+      <li><span class="mark">국립공원</span><span><b>IoT WP</b> · IoT 데이터 시각화와 야생동물 관제·관리 화면 고도화</span></li>
+      <li><span class="mark">서울시</span><span><b>2기 교통카드</b> · 가맹점 정산·매출 B2B Admin 및 대용량 이용·충전내역 화면 설계</span></li>
+    </ul>
+  </div>
+
+  <div class="pf-group">
+    <div class="wm">04</div>
+    <div class="dom">R&amp;D · Productization</div>
+    <span class="gl">정부과제 · 제품기획 · 사업화</span>
+    <p class="pf-lead">기술을 시장 가치와 실행계획으로 전환해 높은 경쟁률의 사업을 수주.</p>
+    <div class="rule"></div>
+    <ul class="pf-items">
+      <li><span class="mark">162:1</span><span><b>TBI 정부과제</b> · 제품·시장·유통·수출 전략, 사업계획서·경쟁 PT, 제품개발·생산·출시 마케팅 전 과정</span></li>
+      <li><span class="mark">80:1</span><span><b>신기술개발지원</b> · 투명 디스플레이의 기술 가치와 비즈니스 모델을 구조화해 제품 사업화</span></li>
+      <li><span class="mark">지역SW</span><span><b>블랙아이스 R&D</b> · 예측·대응 R&D 기획·신청·협약, 대학 협업, 진척·보고 및 제품 개발 PM</span></li>
+    </ul>
+  </div>
+
+  <div class="pf-group">
+    <div class="wm">05</div>
+    <div class="dom">Web · Mobile · System</div>
+    <span class="gl">Web · Mobile · System UI/UX</span>
+    <p class="pf-lead">다양한 산업과 사용자 환경에서 축적한 화면·서비스 설계 경험.</p>
+    <div class="rule"></div>
+    <ul class="pf-items">
+      <li><span class="mark">글로벌벤처스</span><span>벤처기업협회 · 4개 사용자 그룹 기반 플랫폼 IA·UI/UX</span></li>
+      <li><span class="mark">국회 웹진</span><span>대한민국 국회 · 웹진 UI/UX 설계·디자인 총괄</span></li>
+      <li><span class="mark">현대·기아</span><span>모바일 서비스·통합 메시징 Android/iOS UI/UX</span></li>
+      <li><span class="mark">공공·교육</span><span>세계김치연구소·LG 라이프그램·중부대학교·국토해양부 HS 피해보상 UI/UX</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 07 PROJECT HIGHLIGHTS ===== -->
+<section class="block wrap" id="highlights" style="padding-top:0">
+  <div class="sec-head"><span class="idx">07</span><span class="klabel">핵심 프로젝트</span><span class="en">Project Highlights</span></div>
+  <h2 class="sec-copy">맡은 문제를 <span class="em">끝까지 책임지는</span> 사람.</h2>
+  <div class="ph-grid">
+
+    <div class="ph">
+      <div class="wm">01</div>
+      <div class="dom">Global · 정부 시스템</div>
+      <div class="pt">페루 광업부 PCM 고도화</div>
+      <div class="pm">2024.01–10 · 글로벌 PM · 시스템 기획 · UI/UX</div>
+      <div class="rule"></div>
+      <div class="pd">기존 폐광계획 시스템을 스스로 분석하고, 정부 부처·현지 개발사·국내 개발팀의 상충하는 요구를 기능·화면과 판단 기준으로 구조화·정렬했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">해외 고객 요구사항 달성률 95%</span></div>
     </div>
+
+    <div class="ph">
+      <div class="wm">02</div>
+      <div class="dom">공공 · 관제 플랫폼</div>
+      <div class="pt">안전보건공단 작업환경 관리플랫폼</div>
+      <div class="pm">2023.09–24.01 · 시스템 기획 · UI/UX</div>
+      <div class="rule"></div>
+      <div class="pd">본사·지점·기업별 권한과 업무 흐름을 구분하고 화학물질·센서 측정값·통신 상태·응급신호 관리 화면을 설계했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">복잡한 업무를 다중 사용자 View로 구조화</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="wm">03</div>
+      <div class="dom">공공 · IoT 플랫폼</div>
+      <div class="pt">국립공원 IoT 야생동물 관리플랫폼</div>
+      <div class="pm">2024.05–06 · 프로젝트 리드 · UI/UX 고도화</div>
+      <div class="rule"></div>
+      <div class="pd">IoT 데이터 시각화와 관제·관리 화면을 개선하고 프로젝트 진행과 납품을 주도했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">관제 편의성과 운영 효율 향상</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="wm">04</div>
+      <div class="dom">대기업 · 모바일</div>
+      <div class="pt">기아자동차 메시지슈터</div>
+      <div class="pm">2013.10–12 · 개발 PM · 모바일 UI/UX · QA</div>
+      <div class="rule"></div>
+      <div class="pd">MMS·이메일·트위터·페이스북 통합발송 솔루션의 요구사항·Spec을 스스로 확정하고, Android/iOS 화면·일정·개발 진척과 테스트·결함 관리(QA)를 주도했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">2개월 내 요구사항 정의→QA→정상 납품</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="wm">05</div>
+      <div class="dom">공공 · B2B Admin</div>
+      <div class="pt">서울시 2기 교통카드 시스템</div>
+      <div class="pm">2013.07–12 · UI/UX 설계 · 협업 PM</div>
+      <div class="rule"></div>
+      <div class="pd">가맹점 정산·매출 B2B Admin과 대용량 사용자 이용·충전내역 화면을 설계했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">KT 협업사 벤치마킹 UI/UX 평가</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="wm">06</div>
+      <div class="dom">플랫폼 · UI/UX</div>
+      <div class="pt">벤처기업협회 글로벌벤처스</div>
+      <div class="pm">2018.01–10 · 플랫폼 기획 · UI/UX · 개발 PM</div>
+      <div class="rule"></div>
+      <div class="pd">협회·컨설턴트·국내기업·해외 바이어 4개 사용자 그룹의 IA와 기능을 정의하고 경쟁 PT와 개발을 총괄했습니다.</div>
+      <div class="pr"><span class="rk">RESULT</span><span class="rv">경쟁 PT를 통해 최종 제작사 선정</span></div>
+    </div>
+
   </div>
 </section>
 
 <!-- ===== AI QA BRIDGE ===== -->
-<section class="block wrap" id="aiqa">
-  <div class="sec-head"><span class="idx">04</span><h2>AI QA 전환 성과</h2></div>
+<section class="block wrap" id="aiqa" style="padding-top:0">
+  <div class="sec-head"><span class="idx">08</span><span class="klabel">AI QA 전환</span><span class="en">AI Quality Transition</span></div>
+  <h2 class="sec-copy">‘좋은 결과의 기준’을 <span class="em">스스로 검증</span>하는 사람.</h2>
   <div class="qa-bridge">
-    <div class="k">Career Transition · in progress</div>
-    <h3>축적된 기획력을 AI 품질에 적용합니다</h3>
-    <p>남이 만든 툴을 실행해 본 수준이 아니라, ‘AI가 어떤 결과를 좋다고 판단하는가’라는 평가 기준 자체를 설계했습니다. 대표 프로젝트 3개입니다.</p>
+    <p>남이 만든 툴을 실행하는 데서 그치지 않고, ‘AI가 어떤 응답을 좋다고 판단하는가’라는 <b>평가 기준 자체를 설계</b>합니다. 테스트 설계·결함 관리부터 LLM-as-a-Judge 평가 파이프라인까지, <b>측정 가능한 품질 지표</b>로 검증합니다.</p>
+    <div class="qa-cycle">
+      <span class="cyc"><b>측정</b> Measure</span><span class="arw">→</span>
+      <span class="cyc"><b>분석</b> Analyze</span><span class="arw">→</span>
+      <span class="cyc"><b>개선</b> Improve</span><span class="arw">→</span>
+      <span class="cyc"><b>재검증</b> Re-test</span>
+    </div>
     <div class="qa-cards">
-      <div class="qa-mini"><div class="qn">05 / RAIT</div><div class="qt">RaiT 품질평가 시스템</div><div class="qd">LLM 응답을 8개 지표로 채점하는 자체 평가 프레임워크</div></div>
-      <div class="qa-mini"><div class="qn">01 / VOC</div><div class="qt">VOC 멀티에이전트 QA</div><div class="qd">멀티에이전트 + LLM Judge로 품질 게이트 운영</div></div>
-      <div class="qa-mini"><div class="qn">02 / QP</div><div class="qt">AI 품질 플랫폼</div><div class="qd">품질 지표 집계·모니터링 대시보드</div></div>
+      <div class="qa-mini"><div class="qn">05 / RAIT</div><div class="qt">RaiT 품질평가 시스템</div><div class="qd">Relevance·Truthfulness 등 8축으로 LLM 응답을 채점하는 자체 평가 프레임워크 설계</div></div>
+      <div class="qa-mini"><div class="qn">01 / VOC</div><div class="qt">VOC 멀티에이전트 QA</div><div class="qd">멀티에이전트 + 독립 LLM Judge로 품질 게이트 운영, AWS 증적 추적</div></div>
+      <div class="qa-mini"><div class="qn">02 / QP</div><div class="qt">AI 품질 플랫폼</div><div class="qd">품질 지표 집계·결함 관리·모니터링 대시보드</div></div>
     </div>
     <a class="btn btn--primary" href="./qa/">전체 10개 프로젝트 보기 →</a>
   </div>
 </section>
 
-<!-- ===== SKILLS ===== -->
-<section class="block wrap" id="skills">
-  <div class="sec-head"><span class="idx">05</span><h2>역량</h2></div>
-  <div class="skills">
-    <div class="skill-col">
-      <h4>기획 · 프로젝트 관리</h4>
-      <div class="cap">Core · foundation</div>
-      <div class="skill-row">
-        <span class="chip">요구사항 분석 (BRD/FRD)</span><span class="chip">기능정의서</span>
-        <span class="chip">UI/UX 스토리보드</span><span class="chip">WBS · 리스크 관리</span>
-        <span class="chip">제안서 · 경쟁 PT</span><span class="chip">글로벌 공공 PM</span>
-      </div>
-    </div>
-    <div class="skill-col qa">
-      <h4>AI QA · 데이터 분석</h4>
-      <div class="cap">2025 – · in progress</div>
-      <div class="skill-row">
-        <span class="chip">LLM 평가 (RaiT)</span><span class="chip">LLM Judge</span>
-        <span class="chip">pytest</span><span class="chip">Playwright</span>
-        <span class="chip">AWS</span><span class="chip">SQL</span>
-        <span class="chip">Jira</span><span class="chip">ADsP</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== CONTACT ===== -->
-<section class="block wrap" id="contact">
-  <div class="sec-head"><span class="idx">06</span><h2>연락처 · 서류</h2></div>
+<section class="block wrap" id="contact" style="padding-top:0">
+  <div class="sec-head"><span class="idx">09</span><span class="klabel">연락처 · 서류</span><span class="en">Contact</span></div>
+  <h2 class="sec-copy">다음 성과를 <span class="em">함께 만들</span> 사람.</h2>
   <div class="contact-box">
     <div class="ci">
       <div class="lbl">Email</div>
       <div class="val"><a href="mailto:mahokani@naver.com">mahokani@naver.com</a></div>
     </div>
     <div class="ci">
+      <div class="lbl">Mobile</div>
+      <div class="val"><a href="tel:01050331779">010-5033-1779</a></div>
+    </div>
+    <div class="ci">
       <div class="lbl">Links</div>
-      <!-- [채우기] {{GITHUB_USER}} / {{LINKEDIN_URL}} -->
-      <div class="val"><a href="https://github.com/{{GITHUB_USER}}" target="_blank" rel="noopener">GitHub</a> · <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="val"><a href="https://github.com/mahokani7" target="_blank" rel="noopener">GitHub</a> · <a href="./qa/">QA 포트폴리오</a></div>
     </div>
     <div class="dl">
-      <!-- [채우기] 실제 PDF 경로 -->
-      <a class="btn btn--primary" href="./assets/resume.pdf" target="_blank" rel="noopener">이력서 · 경력기술서 (PDF)</a>
+      <a class="btn btn--primary" href="./qa/">AI QA 포트폴리오 →</a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 최성우 · 崔作家 &nbsp;·&nbsp; IT PM → AI QA · 품질평가 · 데이터 분석</footer>
+<footer>© 2026 최성우 · 崔作家 &nbsp;·&nbsp; IT 기획 · 시스템 기획 · PM → AI QA</footer>
 
 <script>
+  // Scroll reveal
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    const items=document.querySelectorAll('.tl-item, .pf-card, .qa-mini, .skill-col');
+    const items=document.querySelectorAll('.tl-item, .comp, .edu-card, .hiw-card, .pf-group, .ph, .qa-mini');
     items.forEach(c=>{c.style.opacity='0';c.style.transform='translateY(12px)';});
     const io=new IntersectionObserver((es)=>{
       es.forEach(e=>{if(e.isIntersecting){
@@ -453,6 +715,15 @@
     },{threshold:.12});
     items.forEach(c=>io.observe(c));
   }
+  // Skill bars fill on view
+  const bars=document.querySelectorAll('.sb-fill');
+  const bio=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){
+      e.target.style.width=e.target.dataset.pct+'%';
+      bio.unobserve(e.target);
+    }});
+  },{threshold:.4});
+  bars.forEach(b=>bio.observe(b));
 </script>
 </body>
 </html>
