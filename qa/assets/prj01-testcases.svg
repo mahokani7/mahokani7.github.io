@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 460" role="img" aria-label="TC-15와 TC-16 비교. 두 케이스 모두 내부 파이프라인은 100점(배포 가능)으로 판정했지만, 독립 LLM Judge는 TC-15를 74점, TC-16을 68점으로 재평가했다. 오른쪽 축별 획득률을 보면 두 케이스 모두 정책구체성 축에서 0퍼센트를 받은 것이 점수 하락의 공통 원인이며, TC-16은 유용성 축도 50퍼센트로 낮다">
+  <rect x="0" y="0" width="1180" height="460" fill="#12203a" />
+
+  <text x="20" y="28" font-family="JetBrains Mono, Consolas, monospace" font-size="15" font-weight="700" fill="#eaf0fb">TC-15 / TC-16 — 내부 판정 vs 독립 Judge 판정이 갈린 근거</text>
+
+  <!-- ===== Left panel: total score comparison ===== -->
+  <text x="20" y="58" font-family="JetBrains Mono, Consolas, monospace" font-size="12" fill="#b7c3da">총점 비교 (0~100)</text>
+  <rect x="20" y="38" width="12" height="12" rx="2" fill="#3fd08a" /><text x="38" y="48" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">내부 파이프라인</text>
+  <rect x="170" y="38" width="12" height="12" rx="2" fill="#ff5d6c" /><text x="188" y="48" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">독립 Judge</text>
+
+  <g stroke="#2a3c5f" stroke-width="1">
+    <line x1="70" y1="70"  x2="560" y2="70" />
+    <line x1="70" y1="205" x2="560" y2="205" />
+    <line x1="70" y1="340" x2="560" y2="340" />
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0" text-anchor="end">
+    <text x="62" y="74">100</text>
+    <text x="62" y="209">50</text>
+    <text x="62" y="344">0</text>
+  </g>
+
+  <!-- TC-15 group -->
+  <rect x="100" y="70"    width="50" height="270"   fill="#3fd08a" />
+  <text x="125" y="62" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#eaf0fb">100</text>
+  <rect x="160" y="140.2" width="50" height="199.8" fill="#ff5d6c" />
+  <text x="185" y="132" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#eaf0fb">74</text>
+  <text x="155" y="356" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#b7c3da">TC-15</text>
+
+  <!-- TC-16 group -->
+  <rect x="320" y="70"    width="50" height="270"   fill="#3fd08a" />
+  <text x="345" y="62" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#eaf0fb">100</text>
+  <rect x="380" y="156.4" width="50" height="183.6" fill="#ff5d6c" />
+  <text x="405" y="148" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#eaf0fb">68</text>
+  <text x="375" y="356" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" fill="#b7c3da">TC-16</text>
+
+  <line x1="590" y1="20" x2="590" y2="440" stroke="#2a3c5f" stroke-width="1" />
+
+  <!-- ===== Right panel: per-axis achievement rate ===== -->
+  <text x="640" y="94" font-family="JetBrains Mono, Consolas, monospace" font-size="12" font-weight="700" fill="#b7c3da">TC-15 축별 획득률</text>
+
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="10.5">
+    <text x="640" y="112" fill="#7f8db0">EX</text>
+    <rect x="700" y="99"  width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="99"  width="380" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="112" fill="#eaf0fb">100% (25/25)</text>
+
+    <text x="640" y="140" fill="#7f8db0">TR</text>
+    <rect x="700" y="127" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="127" width="380" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="140" fill="#eaf0fb">100% (20/20)</text>
+
+    <text x="640" y="168" fill="#7f8db0">AT</text>
+    <rect x="700" y="155" width="380" height="16" rx="3" fill="#243657" />
+    <text x="1090" y="168" fill="#ff5d6c">0% (0/20) 최저</text>
+
+    <text x="640" y="196" fill="#7f8db0">RE</text>
+    <rect x="700" y="183" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="183" width="266" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="196" fill="#eaf0fb">70% (14/20)</text>
+
+    <text x="640" y="224" fill="#7f8db0">UP</text>
+    <rect x="700" y="211" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="211" width="380" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="224" fill="#eaf0fb">100% (15/15)</text>
+  </g>
+
+  <text x="640" y="254" font-family="JetBrains Mono, Consolas, monospace" font-size="12" font-weight="700" fill="#b7c3da">TC-16 축별 획득률</text>
+
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="10.5">
+    <text x="640" y="272" fill="#7f8db0">EX</text>
+    <rect x="700" y="259" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="259" width="350" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="272" fill="#eaf0fb">92% (23/25)</text>
+
+    <text x="640" y="300" fill="#7f8db0">TR</text>
+    <rect x="700" y="287" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="287" width="380" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="300" fill="#eaf0fb">100% (20/20)</text>
+
+    <text x="640" y="328" fill="#7f8db0">AT</text>
+    <rect x="700" y="315" width="380" height="16" rx="3" fill="#243657" />
+    <text x="1090" y="328" fill="#ff5d6c">0% (0/20) 최저</text>
+
+    <text x="640" y="356" fill="#7f8db0">RE</text>
+    <rect x="700" y="343" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="343" width="190" height="16" rx="3" fill="#ff5d6c" />
+    <text x="1090" y="356" fill="#ff5d6c">50% (10/20)</text>
+
+    <text x="640" y="384" fill="#7f8db0">UP</text>
+    <rect x="700" y="371" width="380" height="16" rx="3" fill="#243657" />
+    <rect x="700" y="371" width="380" height="16" rx="3" fill="#e8710a" />
+    <text x="1090" y="384" fill="#eaf0fb">100% (15/15)</text>
+  </g>
+
+  <text x="20" y="424" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0">축 코드: EX 정확성 · TR 요약충실성 · AT 정책구체성 · RE 유용성 · UP 안전성 (PRJ_05 RaiT 표기 매핑)</text>
+  <text x="20" y="440" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0">출처: aws_upload/qa_evidence/llm_judge_result.csv</text>
+</svg>
