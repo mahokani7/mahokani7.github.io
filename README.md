@@ -1,4 +1,4 @@
-# 최성우 · 崔作家 — 개인 브랜딩 사이트
+# 최성우(CHOI SEONGU)
 
 GitHub Pages용 커리어 사이트. 메인 홈(경력 서사)과 AI QA 포트폴리오(콘솔 대시보드)로 구성.
 공통 톤: Navy #1B2A4A · Orange #E8710A / Pretendard · JetBrains Mono.
