@@ -27,7 +27,16 @@
     <span class="eyebrow">Killer Module · PRJ_02</span>
     <h1>AI 품질 평가 플랫폼</h1>
     <p class="lede">일회성 테스트를 넘어, LLM 산출물의 품질을 상시 계측하는 평가 플랫폼입니다. 루브릭·Judge 프롬프트·스코어링 보드를 하나로 묶어 QA를 재사용 가능한 제품으로 만들었습니다.</p>
-    <p class="role-line">// LLM Judge 파이프라인 · T-GEO AI 스코어링 보드 연계 설계</p>
+    <p class="role-line">// LLM Judge 파이프라인 · T-GEO AI 스코어링 보드 연계 설계 · 단독 수행</p>
+    <div class="chip-nav">
+      <a href="#problem">Problem</a>
+      <a href="#role">My Role</a>
+      <a href="#solution">Solution</a>
+      <a href="#tech">Tech</a>
+      <a href="#test">Test</a>
+      <a href="#result">Result</a>
+      <a href="#evidence">Evidence</a>
+    </div>
   </section>
 
   <section class="section">
@@ -40,13 +49,25 @@
   </section>
 
   <section class="section">
-    <div class="panel">
-      <h2><span class="section__num">#</span> 개요</h2>
-      <p style="color:var(--ink-2)">AI 산출물 품질은 매 배포마다 흔들립니다. 이 플랫폼은 평가 기준(루브릭)과 Judge 모델 프롬프트, 결과를 집계하는 스코어링 보드를 표준화해, 누가 언제 실행해도 같은 잣대로 품질을 계량하도록 설계했습니다. RaiT 8기준을 T-GEO AI 스코어링 보드와 연계하는 구조를 채택했습니다.</p>
+    <div class="panel" id="problem">
+      <h2><span class="section__num">#</span> 문제 정의 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Problem</span></h2>
+      <p style="color:var(--ink-2)">AI 산출물 품질은 매 배포마다 흔들립니다. 같은 서비스라도 실행할 때마다, 평가하는 사람마다 "품질이 괜찮다"의 기준이 달라지면 배포 판단 자체를 신뢰하기 어렵습니다. 평가 기준(루브릭)과 Judge 모델 프롬프트, 결과를 집계하는 스코어링 보드를 표준화해, 누가 언제 실행해도 같은 잣대로 품질을 계량하는 것이 목표였습니다.</p>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 핵심 구성</h2>
+    <div class="panel" id="role">
+      <h2><span class="section__num">#</span> 담당 역할 <span style="color:var(--muted);font-weight:400;font-size:.8rem">My Role</span></h2>
+      <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 14px">개인 프로젝트로 기획부터 구현까지 단독 수행했습니다.</p>
+      <dl class="kv">
+        <dt>루브릭 설계</dt><dd>8축 평가 기준·가중치 정의 (RaiT 8축을 이 플랫폼의 평가 프레임으로 적용)</dd>
+        <dt>Judge Agent 구현</dt><dd><code>app/judge_agent.py</code> — LLM 기반 채점 로직, <code>app/rule_based_agent.py</code> — 규칙 기반 1차 검증</dd>
+        <dt>JSON Schema 설계</dt><dd><code>app/schemas.py</code> — Judge 출력(점수+근거)의 구조화 스키마 정의</dd>
+        <dt>스코어링 대시보드</dt><dd><code>dashboard/streamlit_app.py</code> — 지표 집계·시각화 화면 구현</dd>
+        <dt>테스트 설계</dt><dd><code>tests/</code> 18개 파일 — 정상 케이스, 레드팀(적대적 입력), 회귀 시나리오 설계</dd>
+      </dl>
+    </div>
+
+    <div class="panel" id="solution">
+      <h2><span class="section__num">#</span> 솔루션 설계 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Solution</span></h2>
       <dl class="kv">
         <dt>루브릭 엔진</dt><dd>지표별 채점 기준·가중치 정의, 도메인별 커스터마이즈</dd>
         <dt>Judge 프롬프트</dt><dd>JSON 출력 스키마 기반의 구조화 채점(점수+근거)</dd>
@@ -55,21 +76,48 @@
       </dl>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 기술 스택</h2>
+    <div class="panel" id="tech">
+      <h2><span class="section__num">#</span> 기술 스택 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Tech</span></h2>
       <div class="stack">
         <span class="chip">LLM-as-a-Judge</span><span class="chip">Rubric</span><span class="chip">JSON Schema</span>
         <span class="chip">Scoring Board</span><span class="chip">ISO/IEC 25010</span><span class="chip">Python</span>
+        <span class="chip">FastAPI</span><span class="chip">pytest</span><span class="chip">k6</span>
       </div>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 성과</h2>
-      <ul style="color:var(--ink-2); padding-left:18px; margin:0">
+    <div class="panel" id="test">
+      <h2><span class="section__num">#</span> 테스트 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Test</span></h2>
+      <p style="color:var(--ink-2)">pytest 기반 자동화 테스트 18개 파일(정상 케이스·레드팀 적대적 입력·회귀 시나리오 포함)을 설계·구현하고, k6로 API 성능을 별도 검증했습니다.</p>
+      <div class="stack" style="margin-top:12px">
+        <span class="chip">test_judge_agent</span><span class="chip">test_rule_based_agent</span><span class="chip">test_quality_pipeline</span>
+        <span class="chip">test_redteam</span><span class="chip">test_regression</span><span class="chip">test_negative_cases</span>
+        <span class="chip">test_retrieval_metrics</span><span class="chip">…외 11개</span>
+      </div>
+    </div>
+
+    <div class="panel" id="result">
+      <h2><span class="section__num">#</span> 결과 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Result</span></h2>
+      <div class="metric-cards">
+        <div class="metric-card"><div class="v">84</div><div class="k">pytest 테스트 통과</div></div>
+        <div class="metric-card"><div class="v">0%</div><div class="k">k6 성능테스트 오류율</div></div>
+        <div class="metric-card"><div class="v">13–21ms</div><div class="k">k6 p95 응답시간</div></div>
+      </div>
+      <p class="tc-note" style="margin-top:12px">출처: <code>tests/</code>(18개 파일, 84개 테스트 함수), <code>docs/performance_report.md</code>(k6 10VUs·30초·총 600 요청, 2026-07-07 실측). 배포 판정용 최종 품질/결함 리포트(<code>docs/final_quality_report.md</code>, <code>docs/defect_report.md</code>)는 실행 후 자동 채워지는 골격 문서로, 별도의 정식 배포 판정 실행 기록은 아직 없습니다.</p>
+      <ul style="color:var(--ink-2); padding-left:18px; margin:14px 0 0">
         <li>평가 파이프라인 표준화로 재현 가능한 품질 측정 체계 확립</li>
         <li>구조화(JSON) 출력으로 자동 집계·회귀 감지 가능</li>
         <li>QA를 프로젝트 산출물이 아닌 재사용 자산으로 제품화</li>
       </ul>
+    </div>
+
+    <div class="panel" id="evidence">
+      <h2><span class="section__num">#</span> 증거 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Evidence</span></h2>
+      <div class="stack">
+        <a class="chip" href="https://github.com/mahokani7/qa-portfolio/tree/main/02_AI_Quality_Platform/tests" target="_blank" rel="noopener">테스트 코드 18개 파일 →</a>
+        <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/02_AI_Quality_Platform/docs/performance_report.md" target="_blank" rel="noopener">k6 성능 리포트 →</a>
+        <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/02_AI_Quality_Platform/app/judge_agent.py" target="_blank" rel="noopener">Judge Agent 코드 →</a>
+        <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/02_AI_Quality_Platform/app/schemas.py" target="_blank" rel="noopener">JSON Schema 코드 →</a>
+      </div>
     </div>
   </section>
 

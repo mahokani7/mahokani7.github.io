@@ -29,6 +29,15 @@
     <p class="lede">AWS 기반 멀티에이전트가 처리한 VOC 결과물을, LLM Judge가 8개 품질지표로 자동 채점하고 대시보드로 리포팅하는 종단 QA 파이프라인입니다.</p>
     <p class="role-line">// 팀 프로젝트(3팀) · 담당: 테스트 설계 · 최종 발표</p>
     <p class="role-line">// 수행기간: 2026.07 – 2026.08.03 (약 3주) · 최종 발표 2026.08.03</p>
+    <div class="chip-nav">
+      <a href="#story">Problem</a>
+      <a href="#role">My Role</a>
+      <a href="#story">Solution</a>
+      <a href="#tech">Tech</a>
+      <a href="#testcases">Test</a>
+      <a href="#result">Result</a>
+      <a href="#evidence">Evidence</a>
+    </div>
   </section>
 
   <section class="section">
@@ -46,24 +55,24 @@
       <p style="color:var(--ink-2)">고객의 소리(VOC)를 여러 전문 에이전트가 분업 처리하는 멀티에이전트 구조에서, 산출물의 품질을 사람이 일일이 검수하는 병목을 제거하는 것이 목표였습니다. LLM-as-a-Judge를 도입해 응답의 관련성·정확성·근거성 등을 자동 평가하고, 결과를 리포팅 대시보드로 집계했습니다.</p>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 진행 스토리</h2>
+    <div class="panel" id="story">
+      <h2><span class="section__num">#</span> 진행 스토리 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Problem → Solution → Test → Result</span></h2>
       <div class="story-grid">
         <div class="story-card">
           <div class="story-card__step">01 · Problem</div>
           <p>멀티에이전트가 VOC를 분업 처리하면서 산출물 품질을 사람이 매번 검수해야 하는 병목이 생겼습니다. 배포 여부를 가르는 기준이 팀마다 감(感)에 의존해, 같은 결과물도 사람에 따라 다르게 평가됐습니다.</p>
         </div>
         <div class="story-card">
-          <div class="story-card__step">02 · Approach</div>
+          <div class="story-card__step">02 · Solution</div>
           <p>평가 기준(루브릭)을 정확성·요약충실성·정책구체성·유용성·안전성 5개 항목으로 구조화하고, Judge 프롬프트가 JSON으로 점수와 근거를 반환하도록 설계했습니다. 내부 파이프라인 자체 평가와 별도로, 독립된 LLM Judge를 두 번째 검수 레이어로 붙였습니다.</p>
         </div>
         <div class="story-card">
-          <div class="story-card__step">03 · Validation</div>
+          <div class="story-card__step">03 · Test</div>
           <p>라이브 VOC 18건을 내부 파이프라인과 독립 Judge 양쪽에서 채점해 비교했습니다. pytest 32건은 전부 통과했지만 독립 Judge 평균은 81.2점으로 배포 기준 95점에 미달해, '테스트 통과 ≠ 배포 승인'이라는 간극을 수치로 확인했습니다.</p>
         </div>
         <div class="story-card">
           <div class="story-card__step">04 · Result</div>
-          <p>내부 파이프라인이 100점(배포 가능)으로 판정한 케이스에서도 독립 Judge는 정책 구체성 0점을 매겨 74~68점으로 재평가했습니다. 이 간극을 근거로 최종 판정을 '배포 보류(HOLD)'로 내리고, 판정 증적을 S3에 암호화 보관 후 CloudTrail로 감사했습니다. (정량 성과는 아래 '정량 성과' 섹션 참고)</p>
+          <p>내부 파이프라인이 100점(배포 가능)으로 판정한 케이스에서도 독립 Judge는 정책 구체성 0점을 매겨 74~68점으로 재평가했습니다. 이 간극을 근거로 최종 판정을 '배포 보류(HOLD)'로 내리고, 판정 증적을 S3에 암호화 보관 후 CloudTrail로 감사했습니다. (정량 성과는 아래 'Result' 섹션 참고)</p>
         </div>
         <div class="story-card">
           <div class="story-card__step">05 · Retrospective</div>
@@ -72,7 +81,7 @@
       </div>
     </div>
 
-    <div class="panel">
+    <div class="panel" id="evidence">
       <h2><span class="section__num">#</span> 시각적 증거</h2>
       <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래 3개는 실제 화면을 캡처한 스크린샷이 아니라, <code>aws_upload/qa_evidence/llm_judge_result.csv</code> 등 실제 증적 데이터로 직접 그린 다이어그램·차트(SVG)입니다. 발표 시연 영상만 실제 녹화·업로드가 필요해 자리만 마련해뒀습니다.</p>
       <div class="evidence-grid">
@@ -100,8 +109,8 @@
       </div>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 담당 역할</h2>
+    <div class="panel" id="role">
+      <h2><span class="section__num">#</span> 담당 역할 <span style="color:var(--muted);font-weight:400;font-size:.8rem">My Role</span></h2>
       <dl class="kv">
         <dt>단독 수행</dt><dd>평가 시나리오·루브릭(채점 기준) 설계, Judge 프롬프트 검증, 최종 발표 스크립트 작성(합니다체, 10분)·시연 녹화(OBS)</dd>
         <dt>팀 공동 수행</dt><dd>독립 LLM Judge 채점 결과와 배포 판정 기준(95점) 정합성 검토, AWS 증적 패키지 최종 리허설·보안 점검</dd>
@@ -109,16 +118,16 @@
       </dl>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 기술 스택</h2>
+    <div class="panel" id="tech">
+      <h2><span class="section__num">#</span> 기술 스택 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Tech</span></h2>
       <div class="stack">
         <span class="chip">AWS</span><span class="chip">Multi-Agent</span><span class="chip">LLM-as-a-Judge</span>
         <span class="chip">Rubric</span><span class="chip">Dashboard</span><span class="chip">OBS Studio</span>
       </div>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 테스트 케이스 (샘플 5건)</h2>
+    <div class="panel" id="testcases">
+      <h2><span class="section__num">#</span> 테스트 케이스 (샘플 5건) <span style="color:var(--muted);font-weight:400;font-size:.8rem">Test</span></h2>
       <div class="table-scroll">
         <table class="tc-table">
           <thead>
@@ -166,8 +175,8 @@
       <p class="tc-note">평가축 표기는 PRJ_05(RaiT 8축) 체계에 맞춰, 독립 Judge의 5개 평가항목 중 각 케이스에서 가장 낮은 점수를 받은 항목을 매핑했습니다 — 정확성→EX · 요약충실성→TR · 정책구체성→AT · 유용성→RE · 안전성→UP.<br>출처: <code>aws_upload/qa_evidence/llm_judge_result.csv</code>, <code>quality_diagnosis/reports/ecommerce_live_retest_merged_e2e_20260715_153313.json</code></p>
     </div>
 
-    <div class="panel">
-      <h2><span class="section__num">#</span> 정량 성과</h2>
+    <div class="panel" id="result">
+      <h2><span class="section__num">#</span> 정량 성과 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Result</span></h2>
       <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 14px">위 '핵심 지표'(100% 자동 채점 · 8축 · AWS · 4인)가 <b>프로세스</b> 지표라면, 아래는 실행 결과로 나온 <b>성과</b> 지표입니다.</p>
       <div class="metric-cards">
         <div class="metric-card"><div class="v">18건</div><div class="k">VOC 자동 채점 처리</div></div>

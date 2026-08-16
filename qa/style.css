@@ -200,6 +200,12 @@ nav.top .links a.cta:hover { background: var(--orange-2); }
 
 .stack { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-family: var(--mono); font-size: 11px; color: var(--ink-2); padding: 3px 8px; border: 1px solid var(--line); border-radius: 6px; }
+a.chip:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ---------- detail page: quick nav (표준 구조 바로가기) ---------- */
+.chip-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.chip-nav a { font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; transition: border-color .15s, color .15s; }
+.chip-nav a:hover { border-color: var(--orange); color: var(--orange); }
 
 /* ---------- timeline (career page) ---------- */
 .timeline { position: relative; margin: 10px 0 0; padding-left: 34px; }
