@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>최성우 · IT 기획 · 시스템 기획 · PM</title>
-<meta name="description" content="광고 AE에서 출발해 제품·서비스·시스템 기획과 UI/UX 설계, 공공·대기업·글로벌 프로젝트 PM으로 확장한 실무형 기획자. 20년+ 경력, AI QA로 전문성 확장 중.">
+<meta name="description" content="광고 AE에서 출발해 제품·서비스·시스템 기획과 UI/UX 설계, 공공·대기업·글로벌 프로젝트 PM으로 확장한 실무형 기획자. 27년 경력, AI QA로 전문성 확장 중.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
         → 08 AI QA 전환 → 09 연락처
   경력 타임라인은 최근 이력이 맨 위(reverse chronological).
 
-  [완료] LinkedIn·이력서 PDF는 사용 안 함으로 확정(2026-08-13) — 관련 UI 없음.
+  [변경] 이력서·자소서는 요청 시 제공, 경력기술서·포트폴리오 PDF는 docs/ 폴더에서 다운로드 제공(2026-08-16).
   실제 포트폴리오 증빙은 QA 프로젝트 저장소(github.com/mahokani7/qa-portfolio, qa/index.html에서 링크)로 대체.
 ============================================================================
 -->
@@ -74,6 +74,8 @@
   .btn--primary:hover{transform:translateY(-2px)}
   .btn--ghost{border-color:#3a4d78;color:#dfe7f4}
   .btn--ghost:hover{border-color:#6d80a8;background:rgba(255,255,255,.04)}
+  .btn--doc{border:1px solid var(--navy);color:var(--navy);background:#fff}
+  .btn--doc:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-2px)}
   .metrics{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px}
   .metric{background:rgba(255,255,255,.05);border:1px solid var(--navy-3);border-radius:12px;padding:13px 20px;min-width:120px}
   .metric .n{font-family:var(--mono);font-size:24px;font-weight:700;color:#fff;letter-spacing:-.02em}
@@ -203,6 +205,9 @@
   .qa-cycle .cyc{font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--navy-3);border-radius:7px;padding:6px 11px;letter-spacing:.02em}
   .qa-cycle .cyc b{color:var(--orange);font-weight:700}
   .qa-cycle .arw{color:#6d80a8;font-family:var(--mono);font-size:12px;align-self:center}
+  .metric--light{background:var(--orange-soft);border-color:#F3D8BE}
+  .metric--light .n{color:var(--navy)}
+  .metric--light .l{color:var(--ink-2)}
 
   /* ---- Contact ---- */
   .contact-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-wrap:wrap;gap:26px;align-items:center}
@@ -250,7 +255,7 @@
       <a class="btn btn--ghost" href="#contact">연락처 · 서류</a>
     </div>
     <div class="metrics">
-      <div class="metric"><div class="n">20년+</div><div class="l">IT 기획 · PM</div></div>
+      <div class="metric"><div class="n">27년+</div><div class="l">IT 기획 · PM</div></div>
       <div class="metric"><div class="n">95%</div><div class="l">해외 고객 요구 달성</div></div>
       <div class="metric"><div class="n">162:1</div><div class="l">정부과제 선정</div></div>
     </div>
@@ -383,6 +388,26 @@
     <div class="sb">
       <div class="si" style="background:#007ACC;font-size:14px">&lt;/&gt;</div>
       <div class="sb-main"><div class="sb-top"><div class="sb-name">VS Code<span class="use">Python·웹 실행·테스트</span></div><div class="sb-pct">50%</div></div><div class="sb-track"><div class="sb-fill" data-pct="50"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#0A9EDC">py</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">pytest<span class="use">테스트 자동화</span></div><div class="sb-pct">65%</div></div><div class="sb-track"><div class="sb-fill" data-pct="65"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#2EAD33">Pw</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Playwright<span class="use">E2E 테스트</span></div><div class="sb-pct">55%</div></div><div class="sb-track"><div class="sb-fill" data-pct="55"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#009688">Fa</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">FastAPI<span class="use">QA API·대시보드</span></div><div class="sb-pct">60%</div></div><div class="sb-track"><div class="sb-fill" data-pct="60"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#17202C">Cy</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">Cypress<span class="use">웹 E2E</span></div><div class="sb-pct">55%</div></div><div class="sb-track"><div class="sb-fill" data-pct="55"></div></div></div>
+    </div>
+    <div class="sb">
+      <div class="si" style="background:#7A5AD6">AI</div>
+      <div class="sb-main"><div class="sb-top"><div class="sb-name">LLM Judge<span class="use">LLM 품질 채점</span></div><div class="sb-pct">70%</div></div><div class="sb-track"><div class="sb-fill" data-pct="70"></div></div></div>
     </div>
   </div>
 </section>
@@ -670,6 +695,10 @@
       <span class="cyc"><b>개선</b> Improve</span><span class="arw">→</span>
       <span class="cyc"><b>재검증</b> Re-test</span>
     </div>
+    <div class="metrics">
+      <div class="metric metric--light"><div class="n">276건</div><div class="l">직접 통과시킨 자동 테스트</div></div>
+      <div class="metric metric--light"><div class="n">7건</div><div class="l">검증 중 발견·수정한 결함</div></div>
+    </div>
     <div class="qa-cards">
       <div class="qa-mini"><div class="qn">05 / RAIT</div><div class="qt">RaiT 품질평가 시스템</div><div class="qd">Relevance·Truthfulness 등 8축으로 LLM 응답을 채점하는 자체 평가 프레임워크 설계</div></div>
       <div class="qa-mini"><div class="qn">01 / VOC</div><div class="qt">VOC 멀티에이전트 QA</div><div class="qd">멀티에이전트 + 독립 LLM Judge로 품질 게이트 운영, AWS 증적 추적</div></div>
@@ -697,7 +726,10 @@
       <div class="val"><a href="https://github.com/mahokani7" target="_blank" rel="noopener">GitHub</a> · <a href="./qa/">QA 포트폴리오</a></div>
     </div>
     <div class="dl">
-      <a class="btn btn--primary" href="./qa/">AI QA 포트폴리오 →</a>
+      <a class="btn btn--doc" href="docs/career-history.pdf" target="_blank" rel="noopener">📄 경력기술서 (PDF)</a>
+      <a class="btn btn--doc" href="docs/portfolio.pdf" target="_blank" rel="noopener">📎 포트폴리오 (PDF)</a>
+      <a class="btn btn--primary" href="mailto:mahokani@naver.com?subject=이력서·자기소개서 요청">✉️ 이력서 · 자기소개서 요청</a>
+      <a class="btn btn--ghost" href="./qa/">AI QA 포트폴리오 →</a>
     </div>
   </div>
 </section>
