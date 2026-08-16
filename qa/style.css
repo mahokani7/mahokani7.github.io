@@ -156,7 +156,7 @@ nav.top .links a.cta:hover { background: var(--orange-2); }
   grid-column: span 4;
   background: linear-gradient(180deg, var(--navy-700), var(--navy-800));
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0 var(--radius) var(--radius) 0;
   padding: 20px;
   display: flex; flex-direction: column; gap: 14px;
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
