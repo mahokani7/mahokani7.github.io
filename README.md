@@ -20,7 +20,8 @@ GitHub Pages용 커리어 사이트. 메인 홈(경력 서사)과 AI QA 포트�
 - 첫 화면은 루트 `index.html`(메인 홈). 상단 우측 "QA 포트폴리오 →" 및 히어로 버튼이 `./qa/` 로 연결됨.
 - `qa/` 안의 페이지들은 상단 "← 메인 홈"으로 루트 `index.html`로 복귀.
 - `index.html`은 인라인 스타일(자체 완결), `qa/`는 `qa/style.css`를 공유.
-- 이력서 PDF·LinkedIn은 사용하지 않음(2026-08-13 확정) — 실제 증빙은 QA 포트폴리오 저장소(`qa/index.html` 히어로의 "GitHub 저장소에서 전체 코드 보기" 버튼 → [github.com/mahokani7/qa-portfolio](https://github.com/mahokani7/qa-portfolio) / 라이브: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/))로 대체. 킬러 프로젝트(01·02·05) 상세 페이지에도 각 폴더 직행 링크 있음.
+- LinkedIn은 사용하지 않음. 실제 증빙은 QA 포트폴리오 저장소(`qa/index.html` 히어로의 "GitHub 저장소에서 전체 코드 보기" 버튼 → [github.com/mahokani7/qa-portfolio](https://github.com/mahokani7/qa-portfolio) / 라이브: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/))로 대체. 킬러 프로젝트(01·02·05) 상세 페이지에도 각 폴더 직행 링크 있음.
+- 이력서 관련 서류(2026-08-16 확정): 경력기술서·포트폴리오 PDF는 `docs/`(career-history.pdf, portfolio.pdf)에서 상시 다운로드 제공. 자기소개서는 회사·직무별로 맞춤 작성이 필요해 공개 배포 대신 메인 홈 Contact의 "자기소개서 요청" 버튼(mailto, 클립보드 복사 폴백 포함)으로 요청받아 개별 전달.
 
 ## 배포 절차
 
