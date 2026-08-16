@@ -219,6 +219,11 @@
 
   footer{background:var(--navy-2);color:#8595b3;padding:30px 0;text-align:center;font-size:12.5px;font-family:var(--mono)}
 
+  /* ---- Toast ---- */
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--navy);color:#fff;border:1px solid var(--navy-3);border-left:3px solid var(--orange);border-radius:10px;padding:12px 18px;font-size:13.5px;box-shadow:0 12px 28px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:200;max-width:calc(100% - 32px)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .toast b{color:var(--orange);font-family:var(--mono)}
+
   @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -728,7 +733,7 @@
     <div class="dl">
       <a class="btn btn--doc" href="docs/career-history.pdf" target="_blank" rel="noopener">📄 경력기술서 (PDF)</a>
       <a class="btn btn--doc" href="docs/portfolio.pdf" target="_blank" rel="noopener">📎 포트폴리오 (PDF)</a>
-      <a class="btn btn--primary" href="mailto:mahokani@naver.com?subject=이력서·자기소개서 요청">✉️ 이력서 · 자기소개서 요청</a>
+      <a class="btn btn--primary" id="cvRequestBtn" href="mailto:mahokani@naver.com?subject=자기소개서 요청">✉️ 자기소개서 요청</a>
       <a class="btn btn--ghost" href="./qa/">AI QA 포트폴리오 →</a>
     </div>
   </div>
@@ -759,6 +764,26 @@
     }});
   },{threshold:.4});
   bars.forEach(b=>bio.observe(b));
+
+  // 자기소개서 요청: mailto 시도 + 이메일 클립보드 복사(mailto 미동작 대비 보험)
+  const cvBtn=document.getElementById('cvRequestBtn');
+  if(cvBtn){
+    cvBtn.addEventListener('click',()=>{
+      const email='mahokani@naver.com';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).catch(()=>{});
+      }
+      const t=document.createElement('div');
+      t.className='toast';
+      t.innerHTML='이메일 앱이 안 열리면 이 주소로 보내주세요 — <b>'+email+'</b> (클립보드에 복사됨)';
+      document.body.appendChild(t);
+      requestAnimationFrame(()=>t.classList.add('show'));
+      setTimeout(()=>{
+        t.classList.remove('show');
+        setTimeout(()=>t.remove(),300);
+      },4500);
+    });
+  }
 </script>
 </body>
 </html>
