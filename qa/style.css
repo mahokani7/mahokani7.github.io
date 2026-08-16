@@ -96,7 +96,8 @@ nav.top .links a.cta:hover { background: var(--orange-2); }
 }
 @keyframes blink { 50% { opacity: 0; } }
 .hero .lede { font-size: 1.12rem; color: var(--ink-2); max-width: 62ch; }
-.hero .role-line { font-family: var(--mono); color: var(--muted); margin-top: 6px; font-size: .95rem; }
+.hero .punch { font-size: 1rem; color: var(--ink); font-weight: 600; margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--orange); max-width: 56ch; }
+.hero .role-line { font-family: var(--mono); color: var(--muted); margin-top: 12px; font-size: .95rem; }
 
 /* ---------- buttons / CTA ---------- */
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
@@ -135,8 +136,21 @@ nav.top .links a.cta:hover { background: var(--orange-2); }
 .section__title { font-size: 1.5rem; font-weight: 750; margin: 0; }
 .section__desc { color: var(--muted); font-size: .95rem; margin-left: auto; font-family: var(--mono); }
 
+/* ---------- capability grid (what I can do) ---------- */
+.capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.capability-grid .panel { margin-bottom: 0; }
+.capability-grid .panel h2 { font-size: 1.05rem; }
+@media (max-width: 900px) { .capability-grid { grid-template-columns: 1fr; } }
+
 /* ---------- project grid (console modules) ---------- */
 .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.grid-divider {
+  grid-column: 1 / -1;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted);
+  border-top: 1px dashed var(--line); padding-top: 20px; margin-top: 6px;
+}
+.grid-divider:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
 
 .module {
   grid-column: span 4;

@@ -28,6 +28,7 @@
     <span class="eyebrow">AI Quality Assurance Engineer</span>
     <h1>테스트로 신뢰를 설계하는<br>QA 엔지니어, 최성우<span class="cursor"></span></h1>
     <p class="lede">IT 기획·PM 20년+의 요구사항 분석·리스크 관리 감각을 LLM 품질평가와 테스트 자동화에 연결합니다. RaiT 8기준 프레임워크와 LLM-as-a-Judge 파이프라인으로 AI 산출물의 품질을 계량화합니다.</p>
+    <p class="punch">20년+간 시스템을 기획하고 프로젝트를 이끌었습니다. 이제 AI 시스템이 제대로 작동하는지 검증합니다.</p>
     <p class="role-line">// pytest · Playwright · FastAPI · Jira · LLM Judge Pipeline · AWS · ISO/IEC 25010</p>
 
     <div class="cta-row">
@@ -42,14 +43,103 @@
     </div>
   </section>
 
-  <section class="section" id="projects">
+  <section class="section" id="capabilities">
     <div class="section__head">
       <span class="section__num">01</span>
+      <h2 class="section__title">What I Can Do</h2>
+      <span class="section__desc">실제 프로젝트에서 사용한 역량만</span>
+    </div>
+    <div class="capability-grid">
+      <div class="panel">
+        <h2>AI Service QA</h2>
+        <div class="stack">
+          <span class="chip">LLM 응답 품질평가</span>
+          <span class="chip">Test Case 설계</span>
+          <span class="chip">Judge Prompt 설계</span>
+          <span class="chip">RAG 응답 검증</span>
+          <span class="chip">Hallucination 검증</span>
+          <span class="chip">Agent 경로 테스트</span>
+          <span class="chip">API Testing</span>
+          <span class="chip">E2E Testing</span>
+          <span class="chip">Regression Testing</span>
+          <span class="chip">Defect Management</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Automation</h2>
+        <div class="stack">
+          <span class="chip">pytest</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Mock API</span>
+          <span class="chip">LLM-as-a-Judge</span>
+          <span class="chip">JSON Schema</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Project / QA Management</h2>
+        <div class="stack">
+          <span class="chip">Jira</span>
+          <span class="chip">WBS · Gantt</span>
+          <span class="chip">Risk Management</span>
+          <span class="chip">Test Plan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="workflow">
+    <div class="section__head">
+      <span class="section__num">02</span>
+      <h2 class="section__title">QA Workflow</h2>
+      <span class="section__desc">Requirement → Re-test</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">01 · Requirement</div>
+        <p>요구사항과 Acceptance Criteria를 분석합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">02 · Risk Analysis</div>
+        <p>기능 및 AI 응답의 주요 Risk를 식별합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">03 · Test Strategy</div>
+        <p>테스트 범위와 우선순위를 정의합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">04 · Test Case</div>
+        <p>정상 / 예외 / Edge Case를 설계합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">05 · Test Execution</div>
+        <p>API / E2E / AI 응답 테스트를 실행합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">06 · Defect Analysis</div>
+        <p>Bug를 재현하고 원인을 분석합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">07 · Improvement</div>
+        <p>개선사항을 도출합니다.</p>
+      </div>
+      <div class="tl-item tl-item--mark">
+        <div class="tl-date">08 · Re-test</div>
+        <p>수정사항을 검증하고 Regression Test를 수행합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section__head">
+      <span class="section__num">03</span>
       <h2 class="section__title">Project Modules</h2>
       <span class="section__desc">10 modules · 3 killer</span>
     </div>
 
     <div class="grid">
+
+      <div class="grid-divider">Featured · Killer Projects (3)</div>
 
       <!-- KILLER 01 -->
       <a class="module module--killer" href="project-01.html">
@@ -93,6 +183,8 @@
         <span class="module__cta">상세 보기</span>
       </a>
 
+      <div class="grid-divider">Supporting Projects (7)</div>
+
       <!-- 03 -->
       <div class="module">
         <div class="module__top"><span class="module__id">PRJ_03</span><span class="tag">Pipeline</span></div>
@@ -119,10 +211,10 @@
       <div class="module">
         <div class="module__top"><span class="module__id">PRJ_06</span><span class="tag">Chatbot QA</span></div>
         <h3>LMS 챗봇 QA</h3>
-        <p>qa_data.json 기반 테스트케이스 7건(TC-001~007) 설계·실행. Pass율 86%, 결함(BUG-001) 보고서까지 작성.</p>
+        <p>테스트케이스 7건(TC-001~007) 설계, 규칙 기반 검증과 API 기반 LLM 판정을 이중으로 비교하는 실행 파이프라인 구성. Jira 결함 자동 등록 연동.</p>
         <div class="metrics">
-          <div><div class="metric__k">PASS율</div><div class="metric__v ok">86%</div></div>
           <div><div class="metric__k">TC</div><div class="metric__v">7건</div></div>
+          <div><div class="metric__k">판정방식</div><div class="metric__v">규칙+API 이중검증</div></div>
         </div>
       </div>
 
