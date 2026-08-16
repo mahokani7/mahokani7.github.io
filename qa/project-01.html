@@ -83,7 +83,7 @@
 
     <div class="panel" id="evidence">
       <h2><span class="section__num">#</span> 시각적 증거</h2>
-      <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래 3개는 실제 화면을 캡처한 스크린샷이 아니라, <code>aws_upload/qa_evidence/llm_judge_result.csv</code> 등 실제 증적 데이터로 직접 그린 다이어그램·차트(SVG)입니다. 발표 시연 영상만 실제 녹화·업로드가 필요해 자리만 마련해뒀습니다.</p>
+      <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래는 실제 화면을 캡처한 스크린샷이 아니라, <code>aws_upload/qa_evidence/llm_judge_result.csv</code> 등 실제 증적 데이터로 직접 그린 다이어그램·차트(SVG)입니다.</p>
       <div class="evidence-grid">
         <figure class="evidence">
           <img class="evidence__img" src="assets/prj01-architecture.svg" alt="AWS 멀티에이전트 파이프라인 아키텍처 다이어그램 — Interpreter → Retriever → Summarizer → Evaluator → Critic → Improver 흐름과 독립 Judge 개입 지점">
@@ -96,15 +96,6 @@
         <figure class="evidence">
           <img class="evidence__img" src="assets/prj01-testcases.svg" alt="TC-15·TC-16의 내부 파이프라인 판정과 독립 Judge 판정 비교, 축별 획득률 분해">
           <figcaption>TC-15 / TC-16 비교 차트 — 내부 파이프라인 100점 판정과 독립 Judge 74점 · 68점 판정이 갈린 근거(정책구체성 축 0%)를 축별로 분해 · 실데이터 기반</figcaption>
-        </figure>
-        <figure class="evidence">
-          <div class="evidence__ph">
-            <!-- YouTube unlisted 업로드 후 아래 iframe으로 교체
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="PRJ_01 발표 시연 영상" allowfullscreen></iframe>
-            -->
-            <a class="evidence__link" href="#">▶ 발표 시연 영상 (10분, OBS 녹화) — YouTube unlisted 링크 추가 예정</a>
-          </div>
-          <figcaption>최종 발표 시연 영상 — AWS CloudShell 재현 실행부터 Judge 채점 결과 리포팅까지 10분 시연</figcaption>
         </figure>
       </div>
     </div>
