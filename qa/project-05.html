@@ -113,7 +113,18 @@
 
     <div class="panel" id="evidence">
       <h2><span class="section__num">#</span> 증거 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Evidence</span></h2>
-      <div class="stack">
+      <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래는 실제 화면 캡처가 아니라, <code>src/engine</code>·<code>config/policy_config.json</code> 등 코드·설정 데이터로 직접 그린 다이어그램·차트(SVG)입니다.</p>
+      <div class="evidence-grid">
+        <figure class="evidence">
+          <img class="evidence__img" src="assets/prj05-pipeline.svg" alt="RaiT 계산 파이프라인 다이어그램 — Judge 프롬프트의 8축 JSON 채점이 Calculator(simple·weight·cutoff·hybrid)를 거쳐 Filter의 과락 판정을 받고, 도메인별 Policy Config가 Filter에 기준을 공급해 최종 PASS/FAIL을 출력">
+          <figcaption>RaiT 계산 파이프라인 — Judge 채점부터 4가지 집계 방식, 도메인 정책 기반 과락 판정까지의 흐름 (직접 작성)</figcaption>
+        </figure>
+        <figure class="evidence">
+          <img class="evidence__img" src="assets/prj05-policy.svg" alt="도메인별 정책 설정 비교 막대그래프 — high_risk_finance(목표점수 4.0·안전성 최소기준 3.5), default_pilot(3.5·3.0), low_risk_entertainment(3.0·2.0)로 도메인마다 다른 배포 판정 기준">
+          <figcaption>도메인별 정책 설정 비교 — 고위험 금융이 가장 엄격, 저위험 엔터테인먼트가 가장 관대한 기준 · config/policy_config.json 실제 값</figcaption>
+        </figure>
+      </div>
+      <div class="stack" style="margin-top:16px">
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/05_RAIT_Evaluation_System/src/engine/calculator.py" target="_blank" rel="noopener">계산 엔진 코드 →</a>
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/05_RAIT_Evaluation_System/config/policy_config.json" target="_blank" rel="noopener">정책 설정 →</a>
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/05_RAIT_Evaluation_System/EXPLAIN.md" target="_blank" rel="noopener">코드 흐름 설명 문서 →</a>

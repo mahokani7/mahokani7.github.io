@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 460" role="img" aria-label="도메인별 정책 설정 비교 막대그래프. high_risk_finance는 목표점수 4.0·안전성(S) 최소기준 3.5로 가장 엄격하고, default_pilot은 목표점수 3.5·S 최소기준 3.0, low_risk_entertainment는 목표점수 3.0·S 최소기준 2.0으로 가장 관대하다. 0~5점 척도">
+  <rect width="1180" height="460" fill="#12203a" />
+
+  <text x="20" y="30" font-family="JetBrains Mono, Consolas, monospace" font-size="15" font-weight="700" fill="#eaf0fb">PRJ_05 · 도메인별 정책 설정 비교 (config/policy_config.json)</text>
+
+  <!-- legend -->
+  <rect x="20" y="42" width="12" height="12" rx="2" fill="#e8710a" /><text x="38" y="52" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#b7c3da">목표 점수 (target_score)</text>
+  <rect x="230" y="42" width="12" height="12" rx="2" fill="#f0b429" /><text x="248" y="52" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#b7c3da">안전성(S) 최소 기준 (cutoff)</text>
+
+  <!-- gridlines 0-5 -->
+  <g stroke="#2a3c5f" stroke-width="1">
+    <line x1="70" y1="100" x2="1140" y2="100" />
+    <line x1="70" y1="156" x2="1140" y2="156" />
+    <line x1="70" y1="212" x2="1140" y2="212" />
+    <line x1="70" y1="268" x2="1140" y2="268" />
+    <line x1="70" y1="324" x2="1140" y2="324" />
+    <line x1="70" y1="380" x2="1140" y2="380" />
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0" text-anchor="end">
+    <text x="62" y="104">5</text>
+    <text x="62" y="160">4</text>
+    <text x="62" y="216">3</text>
+    <text x="62" y="272">2</text>
+    <text x="62" y="328">1</text>
+    <text x="62" y="384">0</text>
+  </g>
+
+  <!-- high_risk_finance: target 4.0, cutoff S 3.5 -->
+  <rect x="195" y="156" width="50" height="224" fill="#e8710a" />
+  <text x="220" y="146" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#ff8c2e">4.0</text>
+  <rect x="255" y="184" width="50" height="196" fill="#f0b429" />
+  <text x="280" y="174" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#f0b429">3.5</text>
+  <text x="250" y="410" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11.5" fill="#eaf0fb">high_risk_finance</text>
+
+  <!-- default_pilot: target 3.5, cutoff S 3.0 -->
+  <rect x="535" y="184" width="50" height="196" fill="#e8710a" />
+  <text x="560" y="174" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#ff8c2e">3.5</text>
+  <rect x="595" y="212" width="50" height="168" fill="#f0b429" />
+  <text x="620" y="202" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#f0b429">3.0</text>
+  <text x="590" y="410" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11.5" fill="#eaf0fb">default_pilot</text>
+
+  <!-- low_risk_entertainment: target 3.0, cutoff S 2.0 -->
+  <rect x="875" y="212" width="50" height="168" fill="#e8710a" />
+  <text x="900" y="202" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#ff8c2e">3.0</text>
+  <rect x="935" y="268" width="50" height="112" fill="#f0b429" />
+  <text x="960" y="258" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11" font-weight="700" fill="#f0b429">2.0</text>
+  <text x="930" y="410" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="11.5" fill="#eaf0fb">low_risk_entertainment</text>
+
+  <text x="20" y="440" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0">점수 척도 0~5(src/runner/llm_judge.py 명시). 축별 가중치도 도메인마다 다름 — 예: 안전성(S) 가중치 finance 2.0 · pilot/entertainment 1.0.</text>
+  <text x="20" y="454" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0">출처: config/policy_config.json</text>
+</svg>

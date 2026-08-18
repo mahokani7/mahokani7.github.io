@@ -117,7 +117,18 @@
 
     <div class="panel" id="evidence">
       <h2><span class="section__num">#</span> 증거 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Evidence</span></h2>
-      <div class="stack">
+      <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래는 실제 화면 캡처가 아니라, <code>app/judge_agent.py</code>·<code>config</code>·<code>docs/performance_report.md</code> 등 코드·실측 데이터로 직접 그린 다이어그램·차트(SVG)입니다.</p>
+      <div class="evidence-grid">
+        <figure class="evidence">
+          <img class="evidence__img" src="assets/prj02-architecture.svg" alt="AI 품질 평가 플랫폼 아키텍처 다이어그램 — Rule-based Agent 1차 검증, Judge Agent LLM 2차 채점, JSON Schema 구조화, Scoring Dashboard 집계, 루브릭 엔진이 8축 가중치를 Judge Agent에 공급하는 흐름">
+          <figcaption>평가 플랫폼 아키텍처 — 규칙 기반 1차 검증부터 LLM Judge 2차 채점, 스코어링 대시보드까지의 흐름 (직접 작성)</figcaption>
+        </figure>
+        <figure class="evidence">
+          <img class="evidence__img" src="assets/prj02-performance.svg" alt="k6 성능 테스트 결과 — 10 VUs 30초 동안 600건 요청, 오류율 0%, 평균 응답시간 10~40ms, p95 13~21ms로 배포 판정 기준 1000ms 대비 여유 있게 통과">
+          <figcaption>k6 성능 테스트 결과 — 600건 요청·오류율 0%, 판정 기준(1000ms) 대비 응답시간 여유 확인 · 실데이터 기반</figcaption>
+        </figure>
+      </div>
+      <div class="stack" style="margin-top:16px">
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/tree/main/02_AI_Quality_Platform/tests" target="_blank" rel="noopener">테스트 코드 18개 파일 →</a>
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/02_AI_Quality_Platform/docs/performance_report.md" target="_blank" rel="noopener">k6 성능 리포트 →</a>
         <a class="chip" href="https://github.com/mahokani7/qa-portfolio/blob/main/02_AI_Quality_Platform/app/judge_agent.py" target="_blank" rel="noopener">Judge Agent 코드 →</a>

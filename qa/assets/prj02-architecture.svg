@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 460" role="img" aria-label="AI 품질 평가 플랫폼 아키텍처 — AI 응답 입력이 규칙 기반 1차 검증, LLM Judge 2차 채점을 거쳐 JSON 스키마로 구조화되고, 스코어링 대시보드에 집계된 뒤 품질 신호(PASS·REVIEW·HOLD)로 출력된다. 별도로 루브릭 엔진이 8축 가중치와 ISO/IEC 25010 매핑을 Judge Agent에 공급한다">
+  <defs>
+    <marker id="p2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f8db0" />
+    </marker>
+    <marker id="p2-arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8710a" />
+    </marker>
+  </defs>
+
+  <rect width="1180" height="460" fill="#12203a" />
+
+  <text x="20" y="30" font-family="JetBrains Mono, Consolas, monospace" font-size="15" font-weight="700" fill="#eaf0fb">PRJ_02 · AI 품질 평가 플랫폼 아키텍처</text>
+
+  <!-- incoming stub -->
+  <line x1="0" y1="202" x2="18" y2="202" stroke="#7f8db0" stroke-width="1.5" marker-end="url(#p2-arrow)" />
+  <text x="2" y="192" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#7f8db0">AI 응답</text>
+
+  <!-- Rule-based Agent -->
+  <rect x="20" y="170" width="150" height="64" rx="8" fill="#243657" stroke="#33466b" stroke-width="1.5" />
+  <text x="95" y="198" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="12.5" fill="#eaf0fb">Rule-based Agent</text>
+  <text x="95" y="215" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">1차 규칙 검증</text>
+
+  <!-- Judge Agent -->
+  <line x1="170" y1="202" x2="188" y2="202" stroke="#7f8db0" stroke-width="1.5" marker-end="url(#p2-arrow)" />
+  <rect x="190" y="170" width="150" height="64" rx="8" fill="#243657" stroke="#33466b" stroke-width="1.5" />
+  <text x="265" y="198" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="12.5" fill="#eaf0fb">Judge Agent</text>
+  <text x="265" y="215" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">LLM 2차 채점</text>
+
+  <!-- JSON Schema -->
+  <line x1="340" y1="202" x2="358" y2="202" stroke="#7f8db0" stroke-width="1.5" marker-end="url(#p2-arrow)" />
+  <rect x="360" y="170" width="150" height="64" rx="8" fill="#243657" stroke="#33466b" stroke-width="1.5" />
+  <text x="435" y="198" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="12.5" fill="#eaf0fb">JSON Schema</text>
+  <text x="435" y="215" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">점수+근거 구조화</text>
+
+  <!-- Scoring Dashboard -->
+  <line x1="510" y1="202" x2="528" y2="202" stroke="#7f8db0" stroke-width="1.5" marker-end="url(#p2-arrow)" />
+  <rect x="530" y="170" width="170" height="64" rx="8" fill="#243657" stroke="#33466b" stroke-width="1.5" />
+  <text x="615" y="198" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="12.5" fill="#eaf0fb">Scoring Dashboard</text>
+  <text x="615" y="215" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">Streamlit 집계·추세</text>
+
+  <!-- 품질 신호 (accent) -->
+  <line x1="700" y1="202" x2="718" y2="202" stroke="#e8710a" stroke-width="1.75" marker-end="url(#p2-arrow-accent)" />
+  <rect x="720" y="170" width="180" height="64" rx="8" fill="#1b2a4a" stroke="#e8710a" stroke-width="2" />
+  <text x="810" y="198" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="13" font-weight="700" fill="#ff8c2e">품질 신호</text>
+  <text x="810" y="215" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">PASS · REVIEW · HOLD</text>
+
+  <!-- Rubric Engine (accent, feeds Judge Agent) -->
+  <rect x="150" y="320" width="260" height="64" rx="8" fill="#1b2a4a" stroke="#e8710a" stroke-width="2" />
+  <text x="280" y="348" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="13" font-weight="700" fill="#ff8c2e">루브릭 엔진</text>
+  <text x="280" y="365" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">8축 가중치 · ISO/IEC 25010 매핑</text>
+  <path d="M280,320 L280,290 L265,290 L265,234" fill="none" stroke="#e8710a" stroke-width="1.75" marker-end="url(#p2-arrow-accent)" />
+  <text x="290" y="286" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#ff8c2e">루브릭 기준 공급</text>
+
+  <!-- legend -->
+  <line x1="20" y1="430" x2="52" y2="430" stroke="#7f8db0" stroke-width="1.5" />
+  <text x="60" y="434" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#b7c3da">평가 실행 경로</text>
+  <line x1="220" y1="430" x2="252" y2="430" stroke="#e8710a" stroke-width="1.75" />
+  <text x="260" y="434" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#ff8c2e">루브릭 기준 · 최종 품질 신호</text>
+  <text x="20" y="450" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#7f8db0">출처: app/judge_agent.py, app/rule_based_agent.py, app/schemas.py, dashboard/streamlit_app.py</text>
+</svg>
