@@ -215,6 +215,8 @@
   .qa-cycle .cyc{font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--navy-3);border-radius:7px;padding:6px 11px;letter-spacing:.02em}
   .qa-cycle .cyc b{color:var(--orange);font-weight:700}
   .qa-cycle .arw{color:#6d80a8;font-family:var(--mono);font-size:12px;align-self:center}
+  .qa-tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 4px;position:relative}
+  .qa-tag{font-family:var(--mono);font-size:.85rem;font-weight:600;color:#fff;background:rgba(255,255,255,.06);border:1px solid var(--navy-3);border-left:2px solid var(--orange);border-radius:3px;padding:6px 12px;letter-spacing:.01em}
   .metric--light{background:var(--orange-soft);border-color:#F3D8BE}
   .metric--light .n{color:var(--navy)}
   .metric--light .l{color:var(--ink-2)}
@@ -877,11 +879,13 @@
       <span class="cyc"><b>개선</b> Improve</span><span class="arw">→</span>
       <span class="cyc"><b>재검증</b> Re-test</span>
     </div>
-    <div class="metrics">
-      <div class="metric metric--light"><div class="n">276건</div><div class="l">직접 통과시킨 자동 테스트</div></div>
-      <div class="metric metric--light"><div class="n">7건</div><div class="l">검증 중 발견·수정한 결함</div></div>
+    <div class="qa-tags">
+      <span class="qa-tag">테스트 설계</span>
+      <span class="qa-tag">결함 리포팅</span>
+      <span class="qa-tag">회귀 검증</span>
+      <span class="qa-tag">품질 게이트 운영</span>
+      <span class="qa-tag">LLM 평가 자동화</span>
     </div>
-    <p style="color:#AEBBD2; font-size:11.5px; font-family:var(--mono); margin-top:10px">276건 = 01 unittest 98 + 01 품질 스위트 32 + 02 pytest 84 + 06 pytest 53 + 09 Jest 4 + 09 node:test 5 (중복 없이 각각 별도 실행)</p>
     <div class="qa-cards">
       <div class="qa-mini"><div class="qn">05 / RAIT</div><div class="qt">RaiT 품질평가 시스템</div><div class="qd">Relevance·Truthfulness 등 8축으로 LLM 응답을 채점하는 자체 평가 프레임워크 설계</div></div>
       <div class="qa-mini"><div class="qn">01 / VOC</div><div class="qt">VOC 멀티에이전트 QA</div><div class="qd">멀티에이전트 + 독립 LLM Judge로 품질 게이트 운영, AWS 증적 추적</div></div>
