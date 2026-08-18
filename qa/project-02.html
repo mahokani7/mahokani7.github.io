@@ -92,7 +92,7 @@
 
     <div class="panel" id="test">
       <h2><span class="section__num">#</span> 테스트 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Test</span></h2>
-      <p style="color:var(--ink-2)">pytest 기반 자동화 테스트 18개 파일(정상 케이스·레드팀 적대적 입력·회귀 시나리오 포함)을 설계·구현하고, k6로 API 성능을 별도 검증했습니다.</p>
+      <p style="color:var(--ink-2)">pytest 기반 자동화 테스트 18개 파일(정상 케이스·레드팀 적대적 입력·회귀 시나리오 포함)을 설계·구현하고, k6로 API 성능을 별도 검증했습니다. <b>LLM 호출 영역은 Mock으로 대체</b>하여 평가 로직·예외 처리·회귀 시나리오를 독립적으로 검증했습니다(실제 API 호출·과금 없음, 더미 키로 84건 전부 통과).</p>
       <div class="stack" style="margin-top:12px">
         <span class="chip">test_judge_agent</span><span class="chip">test_rule_based_agent</span><span class="chip">test_quality_pipeline</span>
         <span class="chip">test_redteam</span><span class="chip">test_regression</span><span class="chip">test_negative_cases</span>
