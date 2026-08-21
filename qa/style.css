@@ -112,6 +112,7 @@ nav.top .links a.cta:hover { background: var(--orange-2); }
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--mono); font-size: 13px; font-weight: 600;
   padding: 11px 18px; border-radius: 6px; border: 1px solid var(--line);
+  cursor: pointer; appearance: none;
   transition: border-color .15s, background .15s, color .15s, transform .15s;
 }
 .btn:hover { transform: translateY(-1px); }
@@ -325,7 +326,7 @@ a.chip:hover { border-color: var(--orange); color: var(--orange); }
 }
 
 /* accessibility */
-a:focus-visible, .module:focus-visible {
+a:focus-visible, button:focus-visible, .module:focus-visible {
   outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 4px;
 }
 @media (prefers-reduced-motion: reduce) {
