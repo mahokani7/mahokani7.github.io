@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>최성우 · IT 기획 · 시스템 기획 · PM</title>
-<meta name="description" content="광고 AE에서 출발해 제품·서비스·시스템 기획과 UI/UX 설계, 공공·대기업·글로벌 프로젝트 PM으로 확장한 실무형 기획자. 20년+ 경력을 바탕으로 AI QA로 영역을 넓히고 있습니다.">
+<title>최성우 | IT 기획·PM 20년+ → AI/LLM QA</title>
+<meta name="description" content="20년+ IT 기획·PM 경험을 기반으로 요구사항 분석, UI/UX, 프로젝트 관리에서 AI/LLM QA와 품질검증까지 역량을 확장한 최성우의 포트폴리오입니다.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,7 +22,7 @@
 ============================================================================
   참고: Notion 「최성우 이력서」 구조 반영
   구성: Hero → 01 핵심 역량 → 02 학력·수상 → 03 스킬 → 04 하는 일(What I Do)
-        → 05 경력(최신순, 요약 5건+전체 18건 토글) → 06 업무 스타일(+AI QA 8단계 플로우)
+        → 05 경력(최신순, 요약 5건+전체 14건 토글) → 06 업무 스타일(+AI QA 8단계 플로우)
         → 07 대표 프로젝트 → 08 핵심 프로젝트 → 09 AI QA 전환 → 10 연락처
   경력 타임라인은 최근 이력이 맨 위(reverse chronological).
 
@@ -30,7 +30,7 @@
   실제 포트폴리오 증빙은 QA 프로젝트 저장소(github.com/mahokani7/qa-portfolio, qa/index.html에서 링크)로 대체.
   [변경] "20년+ IT 기획·PM → AI QA" 포지셔닝 강화 개편(2026-08-16): 핵심역량 CORE(Planning/Project/AI Quality)
   재정렬, 스킬 %바 제거 후 6그룹 재편, What I Do 섹션 신설, How I Work에 AI QA 8단계 플로우 추가,
-  Career 요약 5건+전체 18건 토글 분리. 원본 사실관계·프로젝트·수치는 변경하지 않음.
+  Career 요약 5건+전체 14건 토글 분리. 원본 사실관계·프로젝트·수치는 변경하지 않음.
 ============================================================================
 -->
 
@@ -540,7 +540,7 @@
       <li><span class="mark">1995–00</span><span><b>광커뮤니케이션</b> · 경영기획 과장·실장 — 커리어의 출발점</span></li>
     </ul>
   </div>
-  <button type="button" class="btn btn--doc" id="careerToggle" aria-expanded="false" aria-controls="career-full" style="margin-bottom:26px">전체 경력 보기 (18건) ↓</button>
+  <button type="button" class="btn btn--doc" id="careerToggle" aria-expanded="false" aria-controls="career-full" style="margin-bottom:26px">전체 경력 보기 (14건) ↓</button>
 
   <div class="tl" id="career-full" style="display:none">
 
@@ -588,7 +588,7 @@
 
     <div class="tl-item">
       <div class="tl-year">2012.03 – 2012.06</div>
-      <div class="tl-title">(주)엘스위버 <span class="tl-role">· 기획과 과장</span></div>
+      <div class="tl-title">(주)엘스위버 <span class="tl-role">· 기획 과장</span></div>
       <div class="tl-desc">관공서·대학교 사이트 컨설팅, 서비스·앱·UI/UX 기획. 국토해양부 HS 피해보상 시스템, 서울대·중부대학교 모바일 사이트.</div>
     </div>
 
@@ -607,7 +607,7 @@
     <div class="tl-item key">
       <div class="tl-year">2006.04 – 2009.08</div>
       <div class="tl-title">(주)더삼공일 <span class="tl-role">· 제품개발 및 기획 실장</span><span class="key-badge">KEY</span></div>
-      <div class="tl-desc">제품 가치와 시장을 스스로 정의해 사업계획·경쟁 PT로 수주, 개발부터 유통까지 실행. <b>산업자원부 TBI 7,600만원 유치(162:1)</b>, KAIST 벤처지원센터 입주.</div>
+      <div class="tl-desc">제품 가치와 시장을 스스로 정의해 사업계획·경쟁 PT로 수주, 개발부터 유통까지 실행. <b>산업자원부 TBI 7,600만원 유치(162:1)</b>, KIST 벤처지원센터 입주.</div>
     </div>
 
     <div class="tl-item">
@@ -952,7 +952,7 @@
     careerBtn.addEventListener('click',()=>{
       const open=careerFull.style.display!=='none';
       careerFull.style.display=open?'none':'block';
-      careerBtn.textContent=open?'전체 경력 보기 (18건) ↓':'전체 경력 접기 ↑';
+      careerBtn.textContent=open?'전체 경력 보기 (14건) ↓':'전체 경력 접기 ↑';
       careerBtn.setAttribute('aria-expanded',String(!open));
       if(!open){
         careerFull.querySelectorAll('.tl-item').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
