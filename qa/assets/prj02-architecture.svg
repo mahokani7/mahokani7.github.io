@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 460" role="img" aria-label="AI 품질 평가 플랫폼 아키텍처 — AI 응답 입력이 규칙 기반 1차 검증, LLM Judge 2차 채점을 거쳐 JSON 스키마로 구조화되고, 스코어링 대시보드에 집계된 뒤 품질 신호(PASS·REVIEW·HOLD)로 출력된다. 별도로 루브릭 엔진이 8축 가중치와 ISO/IEC 25010 매핑을 Judge Agent에 공급한다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 460" role="img" aria-label="AI 품질 평가 플랫폼 아키텍처 — AI 응답 입력이 규칙 기반 1차 검증, LLM Judge의 정확성·근거성·유용성·안전성 4개 지표 채점을 거쳐 JSON 스키마로 구조화되고, 스코어링 대시보드에 집계된 뒤 품질 신호(PASS·REVIEW·HOLD)로 출력된다">
   <defs>
     <marker id="p2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7f8db0" />
@@ -48,7 +48,7 @@
   <!-- Rubric Engine (accent, feeds Judge Agent) -->
   <rect x="150" y="320" width="260" height="64" rx="8" fill="#1b2a4a" stroke="#e8710a" stroke-width="2" />
   <text x="280" y="348" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="13" font-weight="700" fill="#ff8c2e">루브릭 엔진</text>
-  <text x="280" y="365" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">8축 가중치 · ISO/IEC 25010 매핑</text>
+  <text x="280" y="365" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="10" fill="#b7c3da">정확성 · 근거성 · 유용성 · 안전성</text>
   <path d="M280,320 L280,290 L265,290 L265,234" fill="none" stroke="#e8710a" stroke-width="1.75" marker-end="url(#p2-arrow-accent)" />
   <text x="290" y="286" font-family="JetBrains Mono, Consolas, monospace" font-size="10.5" fill="#ff8c2e">루브릭 기준 공급</text>
 

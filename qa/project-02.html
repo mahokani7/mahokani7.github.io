@@ -55,10 +55,9 @@
 
   <section class="section">
     <div class="metric-cards">
-      <div class="metric-card"><div class="v">8-axis</div><div class="k">평가 프레임</div></div>
-      <div class="metric-card"><div class="v">JSON</div><div class="k">Judge 출력 스키마</div></div>
-      <div class="metric-card"><div class="v">25010</div><div class="k">ISO/IEC 품질표준</div></div>
-      <div class="metric-card"><div class="v">Board</div><div class="k">스코어링 연계</div></div>
+      <div class="metric-card"><div class="v">4</div><div class="k">Judge 평가 지표</div></div>
+      <div class="metric-card"><div class="v">12</div><div class="k">교차검증 모듈</div></div>
+      <div class="metric-card"><div class="v">84</div><div class="k">pytest PASS</div></div>
     </div>
   </section>
 
@@ -83,10 +82,9 @@
     <div class="panel" id="solution">
       <h2><span class="section__num">#</span> 솔루션 설계 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Solution</span></h2>
       <dl class="kv">
-        <dt>루브릭 엔진</dt><dd>지표별 채점 기준·가중치 정의, 도메인별 커스터마이즈</dd>
+        <dt>Judge 평가</dt><dd>정확성·근거성·유용성·안전성 4개 지표별 채점 기준 정의</dd>
         <dt>Judge 프롬프트</dt><dd>JSON 출력 스키마 기반의 구조화 채점(점수+근거)</dd>
         <dt>스코어링 보드</dt><dd>지표별 점수 집계·추세 시각화, 회귀 감지</dd>
-        <dt>표준 정합</dt><dd>ISO/IEC 25010 품질 특성과 매핑</dd>
       </dl>
     </div>
 
@@ -94,7 +92,7 @@
       <h2><span class="section__num">#</span> 기술 스택 <span style="color:var(--muted);font-weight:400;font-size:.8rem">Tech</span></h2>
       <div class="stack">
         <span class="chip">LLM-as-a-Judge</span><span class="chip">Rubric</span><span class="chip">JSON Schema</span>
-        <span class="chip">Scoring Board</span><span class="chip">ISO/IEC 25010</span><span class="chip">Python</span>
+        <span class="chip">Scoring Board</span><span class="chip">Python</span>
         <span class="chip">FastAPI</span><span class="chip">pytest</span><span class="chip">k6</span>
       </div>
     </div>
@@ -129,7 +127,7 @@
       <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 16px">아래는 실제 화면 캡처가 아니라, <code>app/judge_agent.py</code>·<code>config</code>·<code>docs/performance_report.md</code> 등 코드·실측 데이터로 직접 그린 다이어그램·차트(SVG)입니다.</p>
       <div class="evidence-grid">
         <figure class="evidence">
-          <img class="evidence__img" src="assets/prj02-architecture.svg" alt="AI 품질 평가 플랫폼 아키텍처 다이어그램 — Rule-based Agent 1차 검증, Judge Agent LLM 2차 채점, JSON Schema 구조화, Scoring Dashboard 집계, 루브릭 엔진이 8축 가중치를 Judge Agent에 공급하는 흐름">
+          <img class="evidence__img" src="assets/prj02-architecture.svg" alt="AI 품질 평가 플랫폼 아키텍처 다이어그램 — Rule-based Agent 1차 검증, Judge Agent의 정확성·근거성·유용성·안전성 4개 지표 채점, JSON Schema 구조화, Scoring Dashboard 집계 흐름">
           <figcaption>평가 플랫폼 아키텍처 — 규칙 기반 1차 검증부터 LLM Judge 2차 채점, 스코어링 대시보드까지의 흐름 (직접 작성)</figcaption>
         </figure>
         <figure class="evidence">
