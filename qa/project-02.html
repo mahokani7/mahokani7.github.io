@@ -72,7 +72,7 @@
       <h2><span class="section__num">#</span> 담당 역할 <span style="color:var(--muted);font-weight:400;font-size:.8rem">My Role</span></h2>
       <p style="color:var(--ink-2); font-size:.9rem; margin:0 0 14px">개인 확장 프로젝트로, 팀 프로젝트 기반 코드에서 품질평가 모듈과 테스트 체계를 단독 확장했습니다.</p>
       <dl class="kv">
-        <dt>루브릭 설계</dt><dd>8축 평가 기준·가중치 정의 (RaiT 8축을 이 플랫폼의 평가 프레임으로 적용)</dd>
+        <dt>루브릭 설계</dt><dd>정확성·근거성·유용성·안전성 4개 Judge 평가 지표 정의</dd>
         <dt>Judge Agent 구현</dt><dd><code>app/judge_agent.py</code> — LLM 기반 채점 로직, <code>app/rule_based_agent.py</code> — 규칙 기반 1차 검증</dd>
         <dt>JSON Schema 설계</dt><dd><code>app/schemas.py</code> — Judge 출력(점수+근거)의 구조화 스키마 정의</dd>
         <dt>스코어링 대시보드</dt><dd><code>dashboard/streamlit_app.py</code> — 지표 집계·시각화 화면 구현</dd>
